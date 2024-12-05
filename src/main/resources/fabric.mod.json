@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "crimson",
+  "version": "${version}",
+  "name": "crimson",
+  "description": "",
+  "authors": [],
+  "contact": {
+    "repo": "https://github.com/Samik/crimson"
+  },
+  "license": "All-Rights-Reserved",
+  "icon": "assets/crimson/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "name.crimson.client.CrimsonClient"
+    ],
+    "main": [
+      "name.crimson.Crimson"
+    ],
+    "fabric-datagen": ["name.crimson.datagen.ModDataGeneration"],
+    "terrablender": [
+      "name.crimson.terrablender.TerraMain"
+    ]
+  },
+  "mixins": [
+    "crimson.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
