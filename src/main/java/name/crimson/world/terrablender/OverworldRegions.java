@@ -1,4 +1,4 @@
-package name.crimson.terrablender;
+package name.crimson.world.terrablender;
 
 
 import com.mojang.datafixers.util.Pair;
@@ -15,14 +15,14 @@ import java.util.function.Consumer;
 
 public class OverworldRegions extends Region {
     public OverworldRegions(Identifier name, int weight) {
-        super(name, RegionType.OVERWORLD, weight);
+        super(name, RegionType.NETHER, weight);
     }
 
     @Override
     public void addBiomes(Registry<Biome> registry, Consumer<Pair<MultiNoiseUtil.NoiseHypercube,
             RegistryKey<Biome>>> mapper) {
         this.addModifiedVanillaOverworldBiomes(mapper, modifiedVanillaOverworldBuilder -> {
-            //modifiedVanillaOverworldBuilder.replaceBiome(BiomeKeys.FOREST, ModBiomes.TEST_BIOME);
+            modifiedVanillaOverworldBuilder.replaceBiome(BiomeKeys.FOREST, ModBiomes.CRIMSON);
         });
     }
 }

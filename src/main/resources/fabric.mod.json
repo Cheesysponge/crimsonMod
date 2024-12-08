@@ -20,7 +20,7 @@
     ],
     "fabric-datagen": ["name.crimson.datagen.ModDataGeneration"],
     "terrablender": [
-      "name.crimson.terrablender.TerraMain"
+      "name.crimson.world.terrablender.TerraMain"
     ]
   },
   "mixins": [

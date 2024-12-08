@@ -28,6 +28,7 @@ repositories {
             includeGroup "mezz.jei"
         }
     }
+    maven {url = "https://maven.kyrptonaught.dev"}
 
     // You can add additional repositories if needed for other dependencies.
 }
@@ -45,6 +46,8 @@ dependencies {
     modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:${project.rei_version}"
     modCompileOnly "me.shedaniel:RoughlyEnoughItems-default-plugin-fabric:${project.rei_version}"
 
+    modImplementation "net.kyrptonaught:customportalapi:${project.portal_version}"
+    include "net.kyrptonaught:customportalapi:${project.portal_version}"
     // Conditional dependencies for JEI or REI
     if (project.runtime_itemlist_mod == "jei") {
         modImplementation "mezz.jei:jei-${project.jei_minecraft_version}-fabric:${project.jei_version}"
