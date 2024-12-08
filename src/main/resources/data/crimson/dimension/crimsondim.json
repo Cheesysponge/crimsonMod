@@ -1,5 +1,5 @@
 {
-  "type": "crimson:crimson_dim",
+  "type": "crimson:crimsondim",
   "generator": {
     "type": "minecraft:noise",
     "biome_source": {
