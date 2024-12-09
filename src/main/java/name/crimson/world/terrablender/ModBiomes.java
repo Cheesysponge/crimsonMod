@@ -41,7 +41,7 @@ public class ModBiomes {
 
         spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(EntityType.STRIDER, 2, 3, 5));
 
-        spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(EntityType.WOLF, 5, 4, 4));
+        spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(EntityType.PIGLIN, 5, 4, 4));
 
         //DefaultBiomeFeatures.addFarmAnimals(spawnBuilder);
         //DefaultBiomeFeatures.addBatsAndMonsters(spawnBuilder);
