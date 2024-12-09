@@ -1,9 +1,9 @@
 {
   "default_block": {
-    "Name": "minecraft:crying_obsidian"
+    "Name": "minecraft:blackstone"
   },
   "default_fluid": {
-    "Name": "minecraft:water",
+    "Name": "minecraft:lava",
     "Properties": {
       "level": "0"
     }
@@ -12,7 +12,7 @@
   "aquifers_enabled": false,
   "legacy_random_source": true,
   "noise": {
-    "height": 400,
+    "height": 640,
     "min_y": 0,
     "size_horizontal": 2,
     "size_vertical": 2
@@ -38,10 +38,10 @@
                 "type": "minecraft:mul",
                 "argument1": {
                   "type": "minecraft:y_clamped_gradient",
-                  "from_y": 400,
-                  "from_value": 0.85,
-                  "to_value": 1,
-                  "to_y": 340
+                  "from_y": 680,
+                  "from_value": 0,
+                  "to_value": 1.02,
+                  "to_y": 400
                 },
                 "argument2": {
                   "type": "minecraft:add",
@@ -60,8 +60,8 @@
                       },
                       "argument2": {
                         "type": "minecraft:add",
-                        "argument1": -0.95,
-                        "argument2": "minecraft:overworld/base_3d_noise"
+                        "argument1": -0.9,
+                        "argument2": "minecraft:end/base_3d_noise"
                       }
                     }
                   }
@@ -108,12 +108,49 @@
       {
         "type": "minecraft:condition",
         "if_true": {
+          "type": "minecraft:not",
+          "invert": {
+            "type": "minecraft:y_above",
+            "anchor": {
+              "above_bottom": 10
+            },
+            "surface_depth_multiplier": 20,
+            "add_stone_depth": false
+          }
+        },
+        "then_run": {
+          "type": "minecraft:block",
+          "result_state": {
+            "Name": "minecraft:obsidian"
+          }
+        }
+      },
+      {
+        "type": "minecraft:condition",
+        "if_true": {
+          "type": "minecraft:y_above",
+          "anchor": {
+            "above_bottom": 370
+          },
+          "surface_depth_multiplier": 20,
+          "add_stone_depth": true
+        },
+        "then_run": {
+          "type": "minecraft:block",
+          "result_state": {
+            "Name": "minecraft:obsidian"
+          }
+        }
+      },
+      {
+        "type": "minecraft:condition",
+        "if_true": {
           "type": "minecraft:y_above",
           "add_stone_depth": false,
           "anchor": {
             "below_top": 5
           },
-          "surface_depth_multiplier": 0
+          "surface_depth_multiplier": 1
         },
         "then_run": {
           "type": "minecraft:block",
