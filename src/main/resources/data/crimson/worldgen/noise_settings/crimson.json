@@ -41,7 +41,7 @@
                   "from_y": 680,
                   "from_value": 0,
                   "to_value": 1.02,
-                  "to_y": 400
+                  "to_y": 450
                 },
                 "argument2": {
                   "type": "minecraft:add",
@@ -112,9 +112,9 @@
           "invert": {
             "type": "minecraft:y_above",
             "anchor": {
-              "above_bottom": 10
+              "above_bottom": 20
             },
-            "surface_depth_multiplier": 20,
+            "surface_depth_multiplier": 10,
             "add_stone_depth": false
           }
         },
@@ -128,9 +128,29 @@
       {
         "type": "minecraft:condition",
         "if_true": {
+          "type": "minecraft:not",
+          "invert": {
+            "type": "minecraft:y_above",
+            "anchor": {
+              "above_bottom": 76
+            },
+            "surface_depth_multiplier": 20,
+            "add_stone_depth": false
+          }
+        },
+        "then_run": {
+          "type": "minecraft:block",
+          "result_state": {
+            "Name": "minecraft:blackstone"
+          }
+        }
+      },
+      {
+        "type": "minecraft:condition",
+        "if_true": {
           "type": "minecraft:y_above",
           "anchor": {
-            "above_bottom": 370
+            "above_bottom": 450
           },
           "surface_depth_multiplier": 20,
           "add_stone_depth": true
@@ -259,6 +279,23 @@
               }
             }
           ]
+        }
+      },
+      {
+        "type": "minecraft:condition",
+        "if_true": {
+          "type": "minecraft:y_above",
+          "anchor": {
+            "above_bottom": 360
+          },
+          "surface_depth_multiplier": 20,
+          "add_stone_depth": false
+        },
+        "then_run": {
+          "type": "minecraft:block",
+          "result_state": {
+            "Name": "minecraft:blackstone"
+          }
         }
       },
       {
