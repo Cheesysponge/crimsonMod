@@ -29,6 +29,7 @@ repositories {
         }
     }
     maven {url = "https://maven.kyrptonaught.dev"}
+    maven { url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/' }
 
     // You can add additional repositories if needed for other dependencies.
 }
@@ -60,6 +61,7 @@ dependencies {
         throw new GradleException("Invalid runtime_itemlist_mod value: " + project.runtime_itemlist_mod)
     }
 
+    modImplementation "software.bernie.geckolib:geckolib-fabric-${project.geckolib_version}"
 
 }
 
