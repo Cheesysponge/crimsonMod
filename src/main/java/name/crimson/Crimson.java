@@ -1,5 +1,6 @@
 package name.crimson;
 
+import name.crimson.blocks.ModBlocks;
 import name.crimson.entity.ModEntities;
 import name.crimson.entity.custom.ChomperEntity;
 import name.crimson.item.ModItemGroup;
@@ -21,6 +22,7 @@ public class Crimson implements ModInitializer {
         ModDimensions.register();
         FabricDefaultAttributeRegistry.register(ModEntities.CHOMPER, ChomperEntity.setAttributes());
         ModItems.registerModItems();
+        ModBlocks.registerModBlocks();
         ModItemGroup.registerItemGroups();
 
     }

@@ -1,6 +1,7 @@
 package name.crimson.item;
 
 import name.crimson.Crimson;
+import name.crimson.blocks.ModBlocks;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -17,6 +18,9 @@ public class ModItemGroup {
                     .icon(() -> new ItemStack(ModItems.CHOMPER_SPAWN_EGG)).entries((displayContext, entries) -> {
                         for(int i = 0; i<ModItems.items.length;i++){
                             entries.add(ModItems.items[i]);
+                        }
+                        for(int i = 0; i<ModBlocks.items.length;i++){
+                            entries.add(ModBlocks.items[i].asItem());
                         }
                     }).build());
 
