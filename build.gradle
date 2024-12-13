@@ -19,7 +19,6 @@ repositories {
             includeGroup "dev.architectury"
         }
     }
-    maven { url = 'https://maven.minecraftforge.net/' }// for terrablender
     // ModMaven for JEI
     maven {
         name 'modmaven'
@@ -30,6 +29,8 @@ repositories {
     }
     maven {url = "https://maven.kyrptonaught.dev"}
     maven { url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/' }
+    maven { url "https://api.modrinth.com/maven" }
+
 
     // You can add additional repositories if needed for other dependencies.
 }
@@ -42,10 +43,10 @@ dependencies {
 
     // Fabric API
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-    modImplementation 'com.github.glitchfiend:TerraBlender-fabric:1.20.1-3.0.1.7'
     // REI (Roughly Enough Items) API and default plugin if using REI
     modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:${project.rei_version}"
     modCompileOnly "me.shedaniel:RoughlyEnoughItems-default-plugin-fabric:${project.rei_version}"
+    modImplementation("maven.modrinth:sodium:${project.sodium_version}") { exclude group: "net.fabricmc.fabric-api" }
 
     modImplementation "net.kyrptonaught:customportalapi:${project.portal_version}"
     include "net.kyrptonaught:customportalapi:${project.portal_version}"

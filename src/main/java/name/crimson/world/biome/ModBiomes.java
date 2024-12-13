@@ -1,4 +1,4 @@
-package name.crimson.world.terrablender;
+package name.crimson.world.biome;
 
 import name.crimson.Crimson;
 import net.minecraft.client.sound.MusicType;
@@ -24,17 +24,6 @@ public class ModBiomes {
         context.register(CRIMSON, crimsonBiome(context));
     }
 
-    public static void globalOverworldGeneration(GenerationSettings.LookupBackedBuilder builder) {
-        builder.carver(GenerationStep.Carver.AIR, ConfiguredCarvers.NETHER_CAVE);
-        //builder.carver(GenerationStep.Carver.AIR, ConfiguredCarvers.CANYON);
-        builder.feature(GenerationStep.Feature.LAKES, MiscPlacedFeatures.LAKE_LAVA_UNDERGROUND);
-        builder.feature(GenerationStep.Feature.LAKES, MiscPlacedFeatures.LAKE_LAVA_SURFACE);
-        //DefaultBiomeFeatures.addAmethystGeodes(builder);
-        //DefaultBiomeFeatures.addDungeons(builder);
-        //DefaultBiomeFeatures.addMineables(builder);
-        //DefaultBiomeFeatures.addSprings(builder);
-        //DefaultBiomeFeatures.addFrozenTopLayer(builder);
-    }
 
     public static Biome crimsonBiome(Registerable<Biome> context) {
         SpawnSettings.Builder spawnBuilder = new SpawnSettings.Builder();
@@ -42,9 +31,6 @@ public class ModBiomes {
         spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(EntityType.STRIDER, 2, 3, 5));
 
         spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(EntityType.PIGLIN, 5, 4, 4));
-
-        //DefaultBiomeFeatures.addFarmAnimals(spawnBuilder);
-        //DefaultBiomeFeatures.addBatsAndMonsters(spawnBuilder);
 
         GenerationSettings.LookupBackedBuilder biomeBuilder = (new GenerationSettings.LookupBackedBuilder(context.getRegistryLookup(RegistryKeys.PLACED_FEATURE),
                         context.getRegistryLookup(RegistryKeys.CONFIGURED_CARVER))).carver(GenerationStep.Carver.AIR, ConfiguredCarvers.NETHER_CAVE).feature(GenerationStep.Feature.VEGETAL_DECORATION, MiscPlacedFeatures.SPRING_LAVA);

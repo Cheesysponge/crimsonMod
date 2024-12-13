@@ -1,6 +1,6 @@
 package name.crimson.datagen;
 
-import name.crimson.world.terrablender.ModBiomes;
+import name.crimson.world.biome.ModBiomes;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.minecraft.registry.RegistryBuilder;

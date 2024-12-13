@@ -2,6 +2,8 @@ package name.crimson;
 
 import name.crimson.entity.ModEntities;
 import name.crimson.entity.custom.ChomperEntity;
+import name.crimson.item.ModItemGroup;
+import name.crimson.item.ModItems;
 import name.crimson.world.dimension.ModDimensions;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
@@ -18,6 +20,8 @@ public class Crimson implements ModInitializer {
         GeckoLib.initialize();
         ModDimensions.register();
         FabricDefaultAttributeRegistry.register(ModEntities.CHOMPER, ChomperEntity.setAttributes());
+        ModItems.registerModItems();
+        ModItemGroup.registerItemGroups();
 
     }
 }

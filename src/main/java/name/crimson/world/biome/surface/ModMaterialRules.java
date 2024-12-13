@@ -1,6 +1,6 @@
-package name.crimson.world.terrablender.surface;
+package name.crimson.world.biome.surface;
 
-import name.crimson.world.terrablender.ModBiomes;
+import name.crimson.world.biome.ModBiomes;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.world.gen.surfacebuilder.MaterialRules;

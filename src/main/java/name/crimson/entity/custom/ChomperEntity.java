@@ -29,9 +29,9 @@ public class ChomperEntity extends AnimalEntity implements GeoEntity {
 
     public static DefaultAttributeContainer.Builder setAttributes() {
         return AnimalEntity.createMobAttributes()
-                .add(EntityAttributes.GENERIC_MAX_HEALTH, 16.0D)
+                .add(EntityAttributes.GENERIC_MAX_HEALTH, 32.0D)
                 .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 4.0f)
-                .add(EntityAttributes.GENERIC_ATTACK_SPEED, 2.0f)
+                .add(EntityAttributes.GENERIC_ATTACK_SPEED, 0.1f)
                 .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.4f);
     }
 
@@ -62,9 +62,11 @@ public class ChomperEntity extends AnimalEntity implements GeoEntity {
     private <T extends GeoAnimatable> PlayState predicate(AnimationState<T> tAnimationState) {
         if(tAnimationState.isMoving()) {
             tAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.chomper.walking", Animation.LoopType.LOOP));
-        }
 
-        tAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.chomper.standing", Animation.LoopType.LOOP));
+        }
+        else {
+            tAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.chomper.standing", Animation.LoopType.LOOP));
+        }
         return PlayState.CONTINUE;
     }
 

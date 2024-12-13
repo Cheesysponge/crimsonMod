@@ -22,9 +22,9 @@ public class ChomperRenderer extends GeoEntityRenderer<ChomperEntity> {
     public void render(ChomperEntity entity, float entityYaw, float partialTick, MatrixStack poseStack,
                        VertexConsumerProvider bufferSource, int packedLight) {
         if(entity.isBaby()) {
-            poseStack.scale(0.4f, 0.4f, 0.4f);
+            poseStack.scale(0.5f, 0.5f, 0.5f);
         }
-
+        poseStack.scale(2f, 2f, 2f);
         super.render(entity, entityYaw, partialTick, poseStack, bufferSource, packedLight);
     }
 }
