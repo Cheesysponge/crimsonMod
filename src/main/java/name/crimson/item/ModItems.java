@@ -13,7 +13,9 @@ public class ModItems {
     public static final Item CHOMPER_SPAWN_EGG = registerItem("chomper_spawn_egg",
             new SpawnEggItem(ModEntities.CHOMPER,0x540000, 0xd60d0d,
                     new FabricItemSettings().maxCount(64)));
+
     public static final Item[] items = new Item[] {CHOMPER_SPAWN_EGG};
+
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, new Identifier(Crimson.MODID, name), item);
     }
