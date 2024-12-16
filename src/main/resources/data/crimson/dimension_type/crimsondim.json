@@ -4,7 +4,7 @@
   "coordinate_scale": 64.0,
   "effects": "minecraft:the_nether",
   "fixed_time": 18000,
-  "has_ceiling": false,
+  "has_ceiling": true,
   "has_raids": false,
   "has_skylight": false,
   "height": 640,

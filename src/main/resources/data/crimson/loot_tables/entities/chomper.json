@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "rolls": 2,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "crimson:crimson_chomper_eye",
+          "weight": 2,
+          "quality": 0
+        }
+      ]
+    }
+  ]
+}

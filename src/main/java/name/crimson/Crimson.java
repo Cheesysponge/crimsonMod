@@ -6,6 +6,7 @@ import name.crimson.entity.custom.ChomperEntity;
 import name.crimson.item.ModItemGroup;
 import name.crimson.item.ModItems;
 import name.crimson.world.dimension.ModDimensions;
+import name.crimson.world.entity.ModEntitySpawn;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import org.slf4j.Logger;
@@ -24,6 +25,7 @@ public class Crimson implements ModInitializer {
         ModItems.registerModItems();
         ModBlocks.registerModBlocks();
         ModItemGroup.registerItemGroups();
+        ModEntitySpawn.addEntitySpawn();
 
     }
 }

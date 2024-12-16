@@ -15,5 +15,5 @@ public class ModEntities {
     public static final EntityType<ChomperEntity> CHOMPER = Registry.register(
             Registries.ENTITY_TYPE, new Identifier(Crimson.MODID, "chomper"),
             FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, ChomperEntity::new)
-                    .dimensions(EntityDimensions.fixed(0.5f, 1f)).build());
+                    .dimensions(EntityDimensions.fixed(0.75f, 1.25f)).build());
 }

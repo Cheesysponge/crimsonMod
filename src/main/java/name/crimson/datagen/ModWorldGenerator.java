@@ -1,5 +1,6 @@
 package name.crimson.datagen;
 
+import name.crimson.world.entity.ModEntitySpawn;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricDynamicRegistryProvider;
 import net.minecraft.registry.RegistryKeys;
