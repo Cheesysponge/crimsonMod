@@ -15,9 +15,12 @@ public class ModItems {
     public static final Item CHOMPER_SPAWN_EGG = registerItem("chomper_spawn_egg",
             new SpawnEggItem(ModEntities.CHOMPER,0x540000, 0xd60d0d,
                     new FabricItemSettings().maxCount(64)));
+    public static final Item TIGER_SPAWN_EGG = registerItem("tiger_spawn_egg",
+            new SpawnEggItem(ModEntities.TIGER,0xa10b00, 0x85322c,
+                    new FabricItemSettings().maxCount(64)));
     public static final Item CRIMSON_EYE = registerItem("crimson_eye",new Item(new FabricItemSettings().maxCount(1).maxDamage(1).fireproof().rarity(Rarity.UNCOMMON)));
 
-    public static final Item[] items = new Item[] {CHOMPER_SPAWN_EGG,CRIMSON_EYE};
+    public static final Item[] items = new Item[] {CHOMPER_SPAWN_EGG,CRIMSON_EYE, TIGER_SPAWN_EGG};
     public static final Item[] items_for_textures = new Item[] {CRIMSON_EYE};
 
 

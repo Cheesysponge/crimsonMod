@@ -3,6 +3,7 @@ package name.crimson;
 import name.crimson.blocks.ModBlocks;
 import name.crimson.entity.ModEntities;
 import name.crimson.entity.custom.ChomperEntity;
+import name.crimson.entity.custom.TigerEntity;
 import name.crimson.item.ModItemGroup;
 import name.crimson.item.ModItems;
 import name.crimson.world.dimension.ModDimensions;
@@ -21,7 +22,7 @@ public class Crimson implements ModInitializer {
     public void onInitialize() {
         GeckoLib.initialize();
         ModDimensions.register();
-        FabricDefaultAttributeRegistry.register(ModEntities.CHOMPER, ChomperEntity.setAttributes());
+        ModEntities.registerAttributes();
         ModItems.registerModItems();
         ModBlocks.registerModBlocks();
         ModItemGroup.registerItemGroups();
