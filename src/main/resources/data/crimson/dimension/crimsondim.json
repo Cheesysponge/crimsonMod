@@ -15,6 +15,18 @@
             "temperature": 0,
             "weirdness": 0
           }
+        },
+        {
+          "biome": "minecraft:crimson_forest",
+          "parameters": {
+            "continentalness": 0,
+            "depth": 0,
+            "erosion": 0,
+            "humidity": 1.1,
+            "offset": 0.175,
+            "temperature": 0.4,
+            "weirdness": 0
+          }
         }
       ],
       "type": "minecraft:multi_noise"

@@ -16,7 +16,7 @@ import net.minecraft.world.biome.BiomeKeys;
 
 public class ModEntitySpawn {
     public static void addEntitySpawn() {
-        BiomeModifications.addSpawn(BiomeSelectors.includeByKey(ModBiomes.CRIMSON),
+        BiomeModifications.addSpawn(BiomeSelectors.includeByKey(ModBiomes.CRIMSON,BiomeKeys.CRIMSON_FOREST),
                 SpawnGroup.CREATURE, ModEntities.CHOMPER, 10, 1, 6);
         BiomeModifications.addSpawn(BiomeSelectors.includeByKey(ModBiomes.CRIMSON),
                 SpawnGroup.CREATURE, EntityType.STRIDER, 2, 3, 6);

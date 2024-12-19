@@ -1,6 +1,7 @@
 package name.crimson.datagen;
 
 import name.crimson.blocks.ModBlocks;
+import name.crimson.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 
@@ -23,7 +24,8 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
-        //itemModelGenerator.register(Item.fromBlock(ModBlocks.CRIMSON_CHOMPER_EYE), Models.GENERATED);
-
+        for(int i = 0; i< ModItems.items_for_textures.length; i++) {
+            itemModelGenerator.register(ModItems.items_for_textures[i], Models.GENERATED);
+        }
     }
 }

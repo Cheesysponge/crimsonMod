@@ -1,7 +1,9 @@
 package name.crimson.world.dimension;
 
 import name.crimson.Crimson;
+import name.crimson.item.ModItems;
 import net.kyrptonaught.customportalapi.api.CustomPortalBuilder;
+import net.kyrptonaught.customportalapi.portal.PortalIgnitionSource;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.Items;
 import net.minecraft.registry.RegistryKey;
@@ -23,7 +25,7 @@ public class ModDimensions {
         CustomPortalBuilder.beginPortal().frameBlock(Blocks.CRIMSON_HYPHAE)
                 .destDimID(new Identifier(Crimson.MODID, "crimsondim"))
                 .tintColor(227, 0, 0)
-                .lightWithItem(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE)
+                .customIgnitionSource(PortalIgnitionSource.ItemUseSource(ModItems.CRIMSON_EYE))
                 .registerPortal();
     }
 }
