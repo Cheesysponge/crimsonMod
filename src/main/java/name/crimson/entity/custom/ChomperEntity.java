@@ -13,10 +13,13 @@ import net.minecraft.entity.passive.ChickenEntity;
 import net.minecraft.entity.passive.MerchantEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.fluid.FluidState;
+import net.minecraft.registry.tag.FluidTags;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldView;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.GeoAnimatable;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
@@ -42,9 +45,17 @@ public class ChomperEntity extends HostileEntity implements GeoEntity {
                 .add(EntityAttributes.GENERIC_ATTACK_SPEED, 0.1f)
                 .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.4f);
     }
+
+    public boolean canSpawn(WorldView world) {
+        return world.doesNotIntersectEntities(this) && !world.containsFluid(this.getBoundingBox());
+    }
+
     @Override
     public boolean isOnFire() {
         return false;
+    }
+    public boolean canWalkOnFluid(FluidState state) {
+        return state.isIn(FluidTags.LAVA);
     }
 
     @Override

@@ -17,10 +17,10 @@ import net.minecraft.world.biome.BiomeKeys;
 public class ModEntitySpawn {
     public static void addEntitySpawn() {
         BiomeModifications.addSpawn(BiomeSelectors.includeByKey(ModBiomes.CRIMSON,BiomeKeys.CRIMSON_FOREST),
-                SpawnGroup.CREATURE, ModEntities.CHOMPER, 10, 1, 6);
+                SpawnGroup.CREATURE, ModEntities.CHOMPER, 20, 1, 4);
         BiomeModifications.addSpawn(BiomeSelectors.includeByKey(ModBiomes.CRIMSON,BiomeKeys.CRIMSON_FOREST),
-                SpawnGroup.CREATURE, ModEntities.TIGER, 10, 1, 1);
+                SpawnGroup.CREATURE, ModEntities.TIGER, 30, 1, 2);
         BiomeModifications.addSpawn(BiomeSelectors.includeByKey(ModBiomes.CRIMSON),
-                SpawnGroup.CREATURE, EntityType.STRIDER, 2, 3, 6);
+                SpawnGroup.CREATURE, EntityType.STRIDER, 1, 2, 4);
     }
 }

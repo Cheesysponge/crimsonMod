@@ -1,13 +1,17 @@
 package name.crimson.entity.custom;
 
 import name.crimson.entity.ModEntities;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.ai.pathing.PathNodeType;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.mob.HostileEntity;
+import net.minecraft.entity.mob.ZombifiedPiglinEntity;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.ChickenEntity;
 import net.minecraft.entity.passive.MerchantEntity;
@@ -16,7 +20,12 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.random.Random;
+import net.minecraft.world.Difficulty;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldAccess;
+import net.minecraft.world.WorldView;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.constant.DefaultAnimations;
 import software.bernie.geckolib.core.animatable.GeoAnimatable;
@@ -64,7 +73,7 @@ public class TigerEntity extends HostileEntity implements GeoEntity {
         this.goalSelector.add(1, new SwimGoal(this));
         this.goalSelector.add(2, new MeleeAttackGoal(this, 1.2D, false));
         this.goalSelector.add(3, new WanderAroundFarGoal(this, 0.75f, 1));
-
+        this.goalSelector.add(4, new WanderAroundGoal(this, 1.0, 60));
         this.goalSelector.add(4, new LookAroundGoal(this));
         this.goalSelector.add(2,new PounceAtTargetGoal(this, 0.4f));
         this.targetSelector.add(2, new ActiveTargetGoal<>(this, PlayerEntity.class, true));
@@ -72,20 +81,33 @@ public class TigerEntity extends HostileEntity implements GeoEntity {
         this.targetSelector.add(3, new ActiveTargetGoal<>(this, ChickenEntity.class, true));
     }
 
+
     public TigerEntity createChild(ServerWorld world, PassiveEntity entity) {
         return ModEntities.TIGER.create(world);
     }
     @Override
     protected SoundEvent getAmbientSound() {
-        return SoundEvents.BLOCK_NETHER_WOOD_FENCE_GATE_CLOSE;
+        return SoundEvents.ENTITY_POLAR_BEAR_AMBIENT;
     }
+    public static boolean canSpawn(EntityType<ZombifiedPiglinEntity> type, WorldAccess world, SpawnReason spawnReason, BlockPos pos, Random random) {
+        return world.getDifficulty() != Difficulty.PEACEFUL && !world.getBlockState(pos.down()).isOf(Blocks.NETHER_WART_BLOCK);
+    }
+    public boolean canSpawn(WorldView world) {
+        return world.doesNotIntersectEntities(this) && !world.containsFluid(this.getBoundingBox());
+    }
+
     @Override
     protected SoundEvent getHurtSound(DamageSource source) {
-        return SoundEvents.BLOCK_NETHER_WOOD_FENCE_GATE_OPEN;
+        return SoundEvents.ENTITY_POLAR_BEAR_HURT;
     }
     @Override
     protected SoundEvent getDeathSound() {
-        return SoundEvents.BLOCK_NETHER_WOOD_TRAPDOOR_OPEN;
+        return SoundEvents.ENTITY_POLAR_BEAR_DEATH;
+    }
+
+    @Override
+    protected void playStepSound(BlockPos pos, BlockState state) {
+        this.playSound(SoundEvents.ENTITY_POLAR_BEAR_STEP, 0.15F, 1.0F);
     }
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllerRegistrar) {
