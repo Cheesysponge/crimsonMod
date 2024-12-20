@@ -28,12 +28,12 @@ public class TigerModel extends GeoModel<TigerEntity> {
 
     @Override
     public void setCustomAnimations(TigerEntity animatable, long instanceId, AnimationState<TigerEntity> animationState) {
-        CoreGeoBone head = getAnimationProcessor().getBone("everything");
+        CoreGeoBone head = getAnimationProcessor().getBone("head");
 
         if (head != null) {
             EntityModelData entityData = animationState.getData(DataTickets.ENTITY_MODEL_DATA);
             head.setRotX(entityData.headPitch() * MathHelper.RADIANS_PER_DEGREE);
-            head.setRotY(entityData.netHeadYaw() * MathHelper.RADIANS_PER_DEGREE + (float)Math.PI);
+            head.setRotY(entityData.netHeadYaw() * MathHelper.RADIANS_PER_DEGREE);
         }
     }
 }

@@ -18,6 +18,8 @@ public class ModEntitySpawn {
     public static void addEntitySpawn() {
         BiomeModifications.addSpawn(BiomeSelectors.includeByKey(ModBiomes.CRIMSON,BiomeKeys.CRIMSON_FOREST),
                 SpawnGroup.CREATURE, ModEntities.CHOMPER, 10, 1, 6);
+        BiomeModifications.addSpawn(BiomeSelectors.includeByKey(ModBiomes.CRIMSON,BiomeKeys.CRIMSON_FOREST),
+                SpawnGroup.CREATURE, ModEntities.TIGER, 10, 1, 1);
         BiomeModifications.addSpawn(BiomeSelectors.includeByKey(ModBiomes.CRIMSON),
                 SpawnGroup.CREATURE, EntityType.STRIDER, 2, 3, 6);
     }
