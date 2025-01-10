@@ -6,5 +6,7 @@ import net.minecraft.item.FoodComponent;
 
 public class ModFoodComponents {
     public static final FoodComponent FUNGI = new FoodComponent.Builder().hunger(5).saturationModifier(0.6f).statusEffect(new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 600, 0), 0.9f).build();
+    public static final FoodComponent WART_BREAD = new FoodComponent.Builder().hunger(7).saturationModifier(0.8f).statusEffect(new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 600, 0), 0.9f).build();
+
 
 }

@@ -20,8 +20,11 @@ public class ModItems {
                     new FabricItemSettings().maxCount(64)));
     public static final Item CRIMSON_EYE = registerItem("crimson_eye",new Item(new FabricItemSettings().maxCount(1).maxDamage(1).fireproof().rarity(Rarity.UNCOMMON)));
 
-    public static final Item[] items = new Item[] {CHOMPER_SPAWN_EGG,CRIMSON_EYE, TIGER_SPAWN_EGG};
-    public static final Item[] items_for_textures = new Item[] {CRIMSON_EYE};
+    public static final Item NETHER_WART_BREAD = registerItem("nether_wart_bread",new Item(new FabricItemSettings().maxCount(16).fireproof().rarity(Rarity.COMMON).food(ModFoodComponents.WART_BREAD)));
+
+
+    public static final Item[] items = new Item[] {CHOMPER_SPAWN_EGG,CRIMSON_EYE, TIGER_SPAWN_EGG, NETHER_WART_BREAD};
+    public static final Item[] items_for_textures = new Item[] {CRIMSON_EYE, NETHER_WART_BREAD};
 
 
     private static Item registerItem(String name, Item item) {

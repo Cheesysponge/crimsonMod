@@ -19,6 +19,8 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
 
     @Override
     public void generate(Consumer<RecipeJsonProvider> exporter) {
+        OneItemShapelessRecipeGenerator(Items.NETHER_WART,3,ModItems.NETHER_WART_BREAD,exporter);
+
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.CRIMSON_EYE, 1)
                 .input(Items.ENDER_EYE)
                 .input(Items.GOLD_INGOT)
@@ -39,6 +41,14 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                         FabricRecipeProvider.conditionsFromItem(First))
                 .criterion(FabricRecipeProvider.hasItem(Second),
                         FabricRecipeProvider.conditionsFromItem(Second))
+                .offerTo(exporter, new Identifier("generated_craft_" + FabricRecipeProvider.getRecipeName(output)));
+    }
+    public void OneItemShapelessRecipeGenerator(Item First,int count, Item output, Consumer<RecipeJsonProvider> exporter) {
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, output, 1)
+                .input(First, count)
+                .criterion(FabricRecipeProvider.hasItem(First),
+                        FabricRecipeProvider.conditionsFromItem(First))
+
                 .offerTo(exporter, new Identifier("generated_craft_" + FabricRecipeProvider.getRecipeName(output)));
     }
 }

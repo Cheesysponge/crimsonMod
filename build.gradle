@@ -30,7 +30,10 @@ repositories {
     maven {url = "https://maven.kyrptonaught.dev"}
     maven { url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/' }
     maven { url "https://api.modrinth.com/maven" }
-
+    repositories {
+        maven { url "https://maven.ryanliptak.com/" }
+    }
+    maven { url "https://maven.terraformersmc.com/" }
 
     // You can add additional repositories if needed for other dependencies.
 }
@@ -50,6 +53,11 @@ dependencies {
 
     modImplementation "net.kyrptonaught:customportalapi:${project.portal_version}"
     include "net.kyrptonaught:customportalapi:${project.portal_version}"
+
+    modImplementation "squeek.appleskin:appleskin-fabric:mc1.20-2.5.1"
+    modImplementation "com.terraformersmc:modmenu:${project.modmenu_version}"
+
+
     // Conditional dependencies for JEI or REI
     if (project.runtime_itemlist_mod == "jei") {
         modImplementation "mezz.jei:jei-${project.jei_minecraft_version}-fabric:${project.jei_version}"
