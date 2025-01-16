@@ -1,3 +1,7 @@
-// 1.20.1	2024-12-20T14:40:27.6367597	crimson/Model Definitions
+// 1.20.1	2025-01-12T11:18:13.3358129	crimson/Model Definitions
+c699b0105a69d0251e3cc0fd6731b638e6172ac6 assets\crimson\models\item\sapphire.json
+f8bbe94bed1a5d91a9782284924f344fc53a5bd5 assets\crimson\models\block\nether_sapphire_ore.json
 821dbb2662a161fde211609fec81227f79a164f2 assets\crimson\models\item\crimson_eye.json
 caacb737dfd71353c93095ed7810551dbf4a7670 assets\crimson\models\item\nether_wart_bread.json
+1d9c86b1bfd17b1ecd13a7a0256185f9b5b54a22 assets\crimson\models\item\nether_sapphire_ore.json
+12acfa766bf8e38b9454861347f43a7ef366ebee assets\crimson\blockstates\nether_sapphire_ore.json

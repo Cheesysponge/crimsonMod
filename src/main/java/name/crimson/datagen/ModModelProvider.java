@@ -19,7 +19,7 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
-        //blockStateModelGenerator.(ModBlocks.CRIMSON_CHOMPER_EYE);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.NETHER_SAPPHIRE_ORE);
     }
 
     @Override

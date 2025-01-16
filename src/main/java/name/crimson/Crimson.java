@@ -8,6 +8,8 @@ import name.crimson.item.ModItemGroup;
 import name.crimson.item.ModItems;
 import name.crimson.world.dimension.ModDimensions;
 import name.crimson.world.entity.ModEntitySpawn;
+import name.crimson.world.feature.ModConfiguredFeatures;
+import name.crimson.world.gen.ModOreGeneration;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import org.slf4j.Logger;
@@ -20,6 +22,8 @@ public class Crimson implements ModInitializer {
 
     @Override
     public void onInitialize() {
+        ModConfiguredFeatures.registerConfiguredFeatures();
+
         GeckoLib.initialize();
         ModDimensions.register();
         ModEntities.registerAttributes();
@@ -27,6 +31,7 @@ public class Crimson implements ModInitializer {
         ModBlocks.registerModBlocks();
         ModItemGroup.registerItemGroups();
         ModEntitySpawn.addEntitySpawn();
+        ModOreGeneration.generateOres();
 
     }
 }
