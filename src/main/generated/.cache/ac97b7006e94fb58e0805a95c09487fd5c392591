@@ -1,7 +1,12 @@
-// 1.20.1	2025-01-12T11:18:13.3358129	crimson/Model Definitions
+// 1.20.1	2025-01-16T21:34:47.9358048	crimson/Model Definitions
 c699b0105a69d0251e3cc0fd6731b638e6172ac6 assets\crimson\models\item\sapphire.json
+7901a588fd22f687238e857ee7a7ba715113042b assets\crimson\models\item\sapphire_axe.json
+9d406c681fba1de4fb5c8dda76bff7a194db3eb1 assets\crimson\models\item\sapphire_hoe.json
+943aad8eb887b6a3c2bbb70ca7cd3f4eac17be95 assets\crimson\models\item\sapphire_shovel.json
 f8bbe94bed1a5d91a9782284924f344fc53a5bd5 assets\crimson\models\block\nether_sapphire_ore.json
 821dbb2662a161fde211609fec81227f79a164f2 assets\crimson\models\item\crimson_eye.json
 caacb737dfd71353c93095ed7810551dbf4a7670 assets\crimson\models\item\nether_wart_bread.json
+0fca890f72a708cc8e7ca6138aca39ca56648a8d assets\crimson\models\item\sapphire_sword.json
 1d9c86b1bfd17b1ecd13a7a0256185f9b5b54a22 assets\crimson\models\item\nether_sapphire_ore.json
 12acfa766bf8e38b9454861347f43a7ef366ebee assets\crimson\blockstates\nether_sapphire_ore.json
+5c300eeb1b7db6323b05a2655c3c116067938e34 assets\crimson\models\item\sapphire_pickaxe.json

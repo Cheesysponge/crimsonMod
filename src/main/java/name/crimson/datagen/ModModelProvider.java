@@ -24,8 +24,11 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
-        for(int i = 0; i< ModItems.items_for_textures.length; i++) {
-            itemModelGenerator.register(ModItems.items_for_textures[i], Models.GENERATED);
+        for(Item item : ModItems.items_for_textures) {
+            itemModelGenerator.register(item, Models.GENERATED);
+        }
+        for(Item tool : ModItems.tools){
+            itemModelGenerator.register(tool, Models.HANDHELD);
         }
     }
 }
