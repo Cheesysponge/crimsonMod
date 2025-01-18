@@ -24,8 +24,14 @@ public class ModItems {
     public static final Item SAPPHIRE_SHOVEL = registerItem("sapphire_shovel", new ShovelItem(ModToolMaterials.SAPPHIRE,3,-2.4f,new FabricItemSettings().rarity(Rarity.UNCOMMON).maxCount(1)));
     public static final Item SAPPHIRE_HOE = registerItem("sapphire_hoe", new HoeItem(ModToolMaterials.SAPPHIRE,-2,-1.0f,new FabricItemSettings().rarity(Rarity.UNCOMMON).maxCount(1)));
 
+    public static final Item SAPPHIRE_HELMET = registerItem("sapphire_helmet", new ArmorItem(ModArmorMaterials.SAPPHIRE, ArmorItem.Type.HELMET,new FabricItemSettings().rarity(Rarity.UNCOMMON).maxCount(1)));
+    public static final Item SAPPHIRE_CHESTPLATE = registerItem("sapphire_chestplate", new ArmorItem(ModArmorMaterials.SAPPHIRE, ArmorItem.Type.CHESTPLATE,new FabricItemSettings().rarity(Rarity.UNCOMMON).maxCount(1)));
+    public static final Item SAPPHIRE_LEGGINGS = registerItem("sapphire_leggings", new ArmorItem(ModArmorMaterials.SAPPHIRE, ArmorItem.Type.LEGGINGS,new FabricItemSettings().rarity(Rarity.UNCOMMON).maxCount(1)));
+    public static final Item SAPPHIRE_BOOTS = registerItem("sapphire_boots", new ArmorItem(ModArmorMaterials.SAPPHIRE, ArmorItem.Type.BOOTS,new FabricItemSettings().rarity(Rarity.UNCOMMON).maxCount(1)));
 
     public static final Item NETHER_WART_BREAD = registerItem("nether_wart_bread",new Item(new FabricItemSettings().maxCount(16).fireproof().rarity(Rarity.COMMON).food(ModFoodComponents.WART_BREAD)));
+
+    public static final Item[] armor = {SAPPHIRE_HELMET,SAPPHIRE_CHESTPLATE,SAPPHIRE_LEGGINGS,SAPPHIRE_BOOTS};
 
     public static final Item[] tools = {SAPPHIRE_SWORD,SAPPHIRE_PICKAXE,SAPPHIRE_AXE,SAPPHIRE_SHOVEL,SAPPHIRE_HOE};
 

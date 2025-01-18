@@ -10,7 +10,6 @@ import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.Models;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
-import net.minecraft.registry.tag.ItemTags;
 
 public class ModModelProvider extends FabricModelProvider {
     public ModModelProvider(FabricDataOutput output) {
@@ -24,6 +23,9 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
+        for(int i = 0; i< ModItems.armor.length; i++) {
+            itemModelGenerator.registerArmor((ArmorItem) ModItems.armor[i]);
+        }
         for(Item item : ModItems.items_for_textures) {
             itemModelGenerator.register(item, Models.GENERATED);
         }

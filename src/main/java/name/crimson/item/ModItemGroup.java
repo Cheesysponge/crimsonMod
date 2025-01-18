@@ -3,6 +3,8 @@ package name.crimson.item;
 import name.crimson.Crimson;
 import name.crimson.blocks.ModBlocks;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.minecraft.block.Block;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
@@ -16,11 +18,22 @@ public class ModItemGroup {
             new Identifier(Crimson.MODID, "main"),
             FabricItemGroup.builder().displayName(Text.translatable("itemGroup.crimson.main"))
                     .icon(() -> new ItemStack(ModItems.CHOMPER_SPAWN_EGG)).entries((displayContext, entries) -> {
-                        for(int i = 0; i<ModItems.items.length;i++){
-                            entries.add(ModItems.items[i]);
+                        for(Item item : ModItems.items){
+                            entries.add(item);
                         }
-                        for(int i = 0; i<ModBlocks.items.length;i++){
-                            entries.add(ModBlocks.items[i].asItem());
+                        for(Block block : ModBlocks.items){
+                            entries.add(block.asItem());
+                        }
+                    }).build());
+    public static final ItemGroup GEAR = Registry.register(Registries.ITEM_GROUP,
+            new Identifier(Crimson.MODID, "gear"),
+            FabricItemGroup.builder().displayName(Text.translatable("itemGroup.crimson.main"))
+                    .icon(() -> new ItemStack(ModItems.SAPPHIRE_SWORD)).entries((displayContext, entries) -> {
+                        for(Item tool : ModItems.tools){
+                            entries.add(tool);
+                        }
+                        for(Item armor : ModItems.armor){
+                            entries.add(armor);
                         }
                     }).build());
 
