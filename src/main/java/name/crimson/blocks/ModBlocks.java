@@ -29,6 +29,7 @@ public class ModBlocks {
             ),10,false),ModFoodComponents.FUNGI);
     public static final Block NETHER_SAPPHIRE_ORE = registerBlock("nether_sapphire_ore",
             new ExperienceDroppingBlock(FabricBlockSettings.copy(Blocks.NETHER_GOLD_ORE).strength(4f).requiresTool().luminance((state) -> 0), UniformIntProvider.create(4,8)));
+    public static final Block SAPPHIRE_BLOCK  = registerBlock("sapphire_block",new Block(FabricBlockSettings.copy(Blocks.DIAMOND_BLOCK).strength(4f).requiresTool()));
     public static final Block[] items = new Block[] {CRIMSON_CHOMPER_EYE,NETHER_SAPPHIRE_ORE};
 
     private static Block registerBlock(String name, Block block){

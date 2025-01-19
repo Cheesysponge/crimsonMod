@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "crimson:nether_sapphire_ore"
+    "crimson:nether_sapphire_ore",
+    "crimson:sapphire_block"
   ]
 }

@@ -1,6 +1,7 @@
 package name.crimson.datagen;
 
 import name.crimson.Crimson;
+import name.crimson.blocks.ModBlocks;
 import name.crimson.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
@@ -37,6 +38,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
         for(Item tool : ModItems.tools) {
             ingotRecipeGenerator(exporter,tool);
         }
+        ingotRecipeGenerator(exporter, Item.fromBlock(ModBlocks.SAPPHIRE_BLOCK));
     }
 
     public void TwoItemShapelessRecipeGenerator(Item First,Item Second, Item output, Consumer<RecipeJsonProvider> exporter) {
