@@ -1,7 +1,7 @@
 package name.crimson.item;
 
 import name.crimson.Crimson;
-import name.crimson.blocks.ModBlocks;
+import name.crimson.block.ModBlocks;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;

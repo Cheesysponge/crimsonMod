@@ -1,28 +1,20 @@
-package name.crimson.blocks;
+package name.crimson.block;
+import dev.architectury.platform.Mod;
 import name.crimson.Crimson;
+import name.crimson.block.custom.StrangeFlower;
 import name.crimson.item.ModFoodComponents;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
-import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.*;
-import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.sound.SoundEvents;
-import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
-import net.minecraft.world.World;
-import org.jetbrains.annotations.Nullable;
-
-import java.util.ArrayList;
-import java.util.List;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 
 
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
-import software.bernie.shadowed.eliotlash.mclib.math.functions.classic.Mod;
+
 public class ModBlocks {
     public static final Block CRIMSON_CHOMPER_EYE = registerBlock("crimson_chomper_eye",
             new ButtonBlock(FabricBlockSettings.copy(Blocks.CRIMSON_PLANKS).strength(1f).luminance((state) -> 16),new BlockSetType("crimson_chomper_eye"
@@ -30,7 +22,8 @@ public class ModBlocks {
     public static final Block NETHER_SAPPHIRE_ORE = registerBlock("nether_sapphire_ore",
             new ExperienceDroppingBlock(FabricBlockSettings.copy(Blocks.NETHER_GOLD_ORE).strength(4f).requiresTool().luminance((state) -> 0), UniformIntProvider.create(4,8)));
     public static final Block SAPPHIRE_BLOCK  = registerBlock("sapphire_block",new Block(FabricBlockSettings.copy(Blocks.DIAMOND_BLOCK).strength(4f).requiresTool()));
-    public static final Block[] items = new Block[] {CRIMSON_CHOMPER_EYE,NETHER_SAPPHIRE_ORE};
+    public static final Block BLACKSTONE_FLOWER = registerBlock("blackstone_flower", new StrangeFlower(StatusEffects.FIRE_RESISTANCE,1000,FabricBlockSettings.copy(Blocks.DANDELION).luminance((state) -> 12).dynamicBounds().strength(1f)), ModFoodComponents.BLACKSTONE_FLOWER);
+    public static final Block[] items = new Block[] {CRIMSON_CHOMPER_EYE,NETHER_SAPPHIRE_ORE,SAPPHIRE_BLOCK,BLACKSTONE_FLOWER};
 
     private static Block registerBlock(String name, Block block){
         registerBlockItem(name, block);

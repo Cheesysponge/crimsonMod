@@ -1,7 +1,7 @@
 package name.crimson.datagen;
 
 import name.crimson.Crimson;
-import name.crimson.blocks.ModBlocks;
+import name.crimson.block.ModBlocks;
 import name.crimson.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
