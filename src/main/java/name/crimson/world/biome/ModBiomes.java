@@ -21,7 +21,7 @@ public class ModBiomes {
     public static final RegistryKey<Biome> CRIMSON = RegistryKey.of(RegistryKeys.BIOME,
             new Identifier(Crimson.MODID, "crimson"));
 
-    public static void boostrap(Registerable<Biome> context) {
+    public static void bootstrap(Registerable<Biome> context) {
         context.register(CRIMSON, crimsonBiome(context));
     }
 

@@ -1,4 +1,6 @@
-// 1.20.1	2025-01-19T21:35:11.825675	crimson/World Gen
+// 1.20.1	2025-01-22T17:30:53.0505432	crimson/World Gen
 6306a65deed329cb59a4c9f042199b81c8fd0d63 data\crimson\worldgen\configured_feature\nether_sapphire_ore.json
+02c11edc163be6e9b303eadb5063e8258df40ffd data\crimson\worldgen\configured_feature\blackstone_flower.json
 5c5547a2c405b10122b7e31fd1e209cd9cdb0ba4 data\crimson\worldgen\biome\crimson.json
 0edd3794e47e2008a99eb0e1d7ecebc70e06913b data\crimson\worldgen\placed_feature\nether_sapphire_ore_placed.json
+3290e66a394b7a996aa671919fba003614596821 data\crimson\worldgen\placed_feature\blackstone_flower_placed.json

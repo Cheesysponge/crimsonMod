@@ -3,6 +3,7 @@ package name.crimson.world.feature;
 
 import name.crimson.Crimson;
 import name.crimson.block.ModBlocks;
+import net.minecraft.block.Blocks;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
@@ -11,6 +12,7 @@ import net.minecraft.structure.rule.RuleTest;
 import net.minecraft.structure.rule.TagMatchRuleTest;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.gen.feature.*;
+import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 
 import java.util.List;
 
@@ -27,6 +29,7 @@ public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?,?>> NETHER_SAPPHIRE_ORE_KEY = registerKey("nether_sapphire_ore");
 
 
+    public static final RegistryKey<ConfiguredFeature<?,?>> BLACKSTONE_FLOWER_KEY = registerKey("blackstone_flower");
 
 
 
@@ -39,10 +42,13 @@ public class ModConfiguredFeatures {
                 List.of(OreFeatureConfig.createTarget(netherReplaceables, ModBlocks.NETHER_SAPPHIRE_ORE.getDefaultState()));
 
         register(context, NETHER_SAPPHIRE_ORE_KEY, Feature.ORE, new OreFeatureConfig(netherSapphireOres, 8));
-        
+
+        register(context, BLACKSTONE_FLOWER_KEY, ModFeature.BLACKSTONE_VEGETATION,
+                new NetherForestVegetationFeatureConfig(BlockStateProvider.of(ModBlocks.BLACKSTONE_FLOWER), 1, 1));
+
     }
 
-//    
+//
     public static void registerConfiguredFeatures() {
         System.out.println("Registering ModConfiguredFeatures for " + Crimson.MODID);
     }

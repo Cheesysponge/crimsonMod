@@ -2,6 +2,7 @@ package name.crimson.datagen;
 
 import name.crimson.world.biome.ModBiomes;
 import name.crimson.world.feature.ModConfiguredFeatures;
+import name.crimson.world.feature.ModFeature;
 import name.crimson.world.feature.ModPlacedFeatures;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
@@ -25,6 +26,8 @@ public class ModDataGeneration implements DataGeneratorEntrypoint {
     public void buildRegistry(RegistryBuilder registryBuilder) {
         registryBuilder.addRegistry(RegistryKeys.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap);
         registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, ModPlacedFeatures::bootstrap);
-        registryBuilder.addRegistry(RegistryKeys.BIOME, ModBiomes::boostrap);
+        registryBuilder.addRegistry(RegistryKeys.BIOME, ModBiomes::bootstrap);
+        //registryBuilder.addRegistry(RegistryKeys.FEATURE, ModFeature::bootstrap);
+
     }
 }
