@@ -25,6 +25,7 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SAPPHIRE_BLOCK);
         blockStateModelGenerator.registerParentedItemModel(ModBlocks.BLACKSTONE_FLOWER, Identifier.of("crimson","block/"+getRecipeName(ModBlocks.BLACKSTONE_FLOWER.asItem())));
 
+
     }
 
     @Override
@@ -36,6 +37,8 @@ public class ModModelProvider extends FabricModelProvider {
         for(Item item : ModItems.items_for_textures) {
             itemModelGenerator.register(item, Models.GENERATED);
         }
+        itemModelGenerator.register(Item.fromBlock(ModBlocks.BLACKSTONE_SPIKE), Models.GENERATED);
+
         for(Item tool : ModItems.tools){
             itemModelGenerator.register(tool, Models.HANDHELD);
         }

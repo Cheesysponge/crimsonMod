@@ -15,6 +15,7 @@ import net.minecraft.util.math.intprovider.UniformIntProvider;
 
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import org.apache.logging.log4j.core.pattern.AbstractStyleNameConverter;
 
 import java.awt.*;
 
@@ -32,7 +33,7 @@ public class ModBlocks {
             new FabricItemSettings().food(ModFoodComponents.BLACKSTONE_FLOWER));
 
     public static final Block BLACKSTONE_SPIKE = registerBlock("blackstone_spike", new BlackstoneSpike(FabricBlockSettings.copy(Blocks.POINTED_DRIPSTONE)));
-    public static final Block[] items = new Block[] {CRIMSON_CHOMPER_EYE,NETHER_SAPPHIRE_ORE,SAPPHIRE_BLOCK,BLACKSTONE_FLOWER};
+    public static final Block[] items = new Block[] {CRIMSON_CHOMPER_EYE,NETHER_SAPPHIRE_ORE,SAPPHIRE_BLOCK,BLACKSTONE_FLOWER, BLACKSTONE_SPIKE};
 
     private static Block registerBlock(String name, Block block){
         registerBlockItem(name, block);
