@@ -1,6 +1,7 @@
 package name.crimson.block;
 import dev.architectury.platform.Mod;
 import name.crimson.Crimson;
+import name.crimson.block.custom.BlackstoneSpike;
 import name.crimson.block.custom.StrangeFlower;
 import name.crimson.item.ModFoodComponents;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -15,6 +16,8 @@ import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 
+import java.awt.*;
+
 public class ModBlocks {
     public static final Block CRIMSON_CHOMPER_EYE = registerBlock("crimson_chomper_eye",
             new ButtonBlock(FabricBlockSettings.copy(Blocks.CRIMSON_PLANKS).strength(1f).luminance((state) -> 16),
@@ -27,6 +30,8 @@ public class ModBlocks {
     public static final Block BLACKSTONE_FLOWER = registerBlock("blackstone_flower", new StrangeFlower(StatusEffects.FIRE_RESISTANCE,1000,
             FabricBlockSettings.copy(Blocks.DANDELION).luminance((state) -> 6).dynamicBounds().strength(1f)),
             new FabricItemSettings().food(ModFoodComponents.BLACKSTONE_FLOWER));
+
+    public static final Block BLACKSTONE_SPIKE = registerBlock("blackstone_spike", new BlackstoneSpike(FabricBlockSettings.copy(Blocks.POINTED_DRIPSTONE)));
     public static final Block[] items = new Block[] {CRIMSON_CHOMPER_EYE,NETHER_SAPPHIRE_ORE,SAPPHIRE_BLOCK,BLACKSTONE_FLOWER};
 
     private static Block registerBlock(String name, Block block){
