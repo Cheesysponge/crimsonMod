@@ -18,7 +18,7 @@ public class SpikeHelper {
     public SpikeHelper() {
     }
 
-    protected static double scaleHeightFromRadius(double radius, double scale, double heightScale, double bluntness) {
+    public static double scaleHeightFromRadius(double radius, double scale, double heightScale, double bluntness) {
         if (radius < bluntness) {
             radius = bluntness;
         }
@@ -33,7 +33,7 @@ public class SpikeHelper {
         return i / 0.384 * scale;
     }
 
-    protected static boolean canGenerateBase(StructureWorldAccess world, BlockPos pos, int height) {
+    public static boolean canGenerateBase(StructureWorldAccess world, BlockPos pos, int height) {
         if (canGenerateOrLava(world, pos)) {
             return false;
         } else {
@@ -52,11 +52,11 @@ public class SpikeHelper {
         }
     }
 
-    protected static boolean canGenerate(WorldAccess world, BlockPos pos) {
+    public static boolean canGenerate(WorldAccess world, BlockPos pos) {
         return world.testBlockState(pos, SpikeHelper::canGenerate);
     }
 
-    protected static boolean canGenerateOrLava(WorldAccess world, BlockPos pos) {
+    public static boolean canGenerateOrLava(WorldAccess world, BlockPos pos) {
         return world.testBlockState(pos, SpikeHelper::canGenerateOrLava);
     }
 

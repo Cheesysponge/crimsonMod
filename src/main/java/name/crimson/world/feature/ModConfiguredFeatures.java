@@ -14,7 +14,9 @@ import net.minecraft.structure.rule.RuleTest;
 import net.minecraft.structure.rule.TagMatchRuleTest;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Direction;
+import net.minecraft.util.math.floatprovider.UniformFloatProvider;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
+import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.world.gen.blockpredicate.BlockPredicate;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.placementmodifier.EnvironmentScanPlacementModifier;
@@ -41,6 +43,9 @@ public class ModConfiguredFeatures {
 
     public static final RegistryKey<ConfiguredFeature<?,?>> BLACKSTONE_SPIKE_KEY = registerKey("blackstone_spike");
 
+    public static final RegistryKey<ConfiguredFeature<?,?>> LARGE_BLACKSTONE_SPIKE_KEY = registerKey("large_blackstone_spike");
+
+
 
 
 
@@ -65,6 +70,12 @@ public class ModConfiguredFeatures {
                         new SmallDripstoneFeatureConfig(0.2F, 0.7F, 0.5F, 0.5F),
                         EnvironmentScanPlacementModifier.of(Direction.UP, BlockPredicate.solid(), BlockPredicate.IS_AIR_OR_WATER, 12),
                         RandomOffsetPlacementModifier.vertically(ConstantIntProvider.create(-1))))));
+
+        register(context, LARGE_BLACKSTONE_SPIKE_KEY, ModFeature.LARGE_BLACKSTONE_SPIKES,
+                new LargeDripstoneFeatureConfig(30, UniformIntProvider.create(3, 19), UniformFloatProvider.create(0.4f, 2.0f),
+                        0.33f, UniformFloatProvider.create(0.3f, 0.9f), UniformFloatProvider.create(0.4f, 1.0f),
+                        UniformFloatProvider.create(0.0f, 0.3f), 4, 0.6f));
+
 
     }
 
