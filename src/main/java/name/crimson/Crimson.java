@@ -4,6 +4,7 @@ import name.crimson.block.ModBlocks;
 import name.crimson.entity.ModEntities;
 import name.crimson.item.ModItemGroup;
 import name.crimson.item.ModItems;
+import name.crimson.particle.ModParticles;
 import name.crimson.world.dimension.ModDimensions;
 import name.crimson.world.entity.ModEntitySpawn;
 import name.crimson.world.feature.ModConfiguredFeatures;
@@ -32,5 +33,7 @@ public class Crimson implements ModInitializer {
         ModItemGroup.registerItemGroups();
         ModEntitySpawn.addEntitySpawn();
         ModWorldGenerator.generate();
+        ModParticles.registerParticles();
+
     }
 }

@@ -1,6 +1,7 @@
 package name.crimson.world.feature;
 
 import net.minecraft.util.Identifier;
+import net.minecraft.world.gen.feature.DripstoneClusterFeatureConfig;
 import net.minecraft.world.gen.feature.LargeDripstoneFeatureConfig;
 import net.minecraft.world.gen.feature.SmallDripstoneFeatureConfig;
 
@@ -14,6 +15,9 @@ public class ModFeature {
 
     public static final Identifier LARGE_BLACKSTONE_SPIKES_ID = Identifier.of("crimson","large_blackstone_spikes");
     public static final LargeSpikeFeature LARGE_BLACKSTONE_SPIKES = new LargeSpikeFeature(LargeDripstoneFeatureConfig.CODEC);
+
+    public static final Identifier BLACKSTONE_SPIKES_CLUSTER_ID = Identifier.of("crimson","blackstone_spikes_cluster");
+    public static final SpikeClusterFeature BLACKSTONE_SPIKES_CLUSTER = new SpikeClusterFeature(DripstoneClusterFeatureConfig.CODEC);
 
 
 }

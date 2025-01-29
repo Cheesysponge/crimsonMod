@@ -31,6 +31,9 @@ public class ModPlacedFeatures {
 
     public static final RegistryKey<PlacedFeature> LARGE_BLACKSTONE_SPIKE_PLACED_KEY = registerKey("large_blackstone_spike_placed");
 
+    public static final RegistryKey<PlacedFeature> BLACKSTONE_SPIKE_CLUSTER_PLACED_KEY = registerKey("blackstone_spike_cluster_placed");
+
+
 
 
 
@@ -55,6 +58,9 @@ public class ModPlacedFeatures {
                 CountPlacementModifier.of(UniformIntProvider.create(192, 256)), SquarePlacementModifier.of(), PlacedFeatures.BOTTOM_TO_TOP_RANGE,
                 CountPlacementModifier.of(UniformIntProvider.create(1, 5)), RandomOffsetPlacementModifier.of(ClampedNormalIntProvider.of(0.0F, 3.0F, -10, 10),
                         ClampedNormalIntProvider.of(0.0F, 0.6F, -2, 2)), BiomePlacementModifier.of());
+
+        register(context, BLACKSTONE_SPIKE_CLUSTER_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.BLACKSTONE_SPIKE_CLUSTER_KEY),
+                CountPlacementModifier.of(UniformIntProvider.create(48, 96)), SquarePlacementModifier.of(), PlacedFeatures.BOTTOM_TO_TOP_RANGE, BiomePlacementModifier.of());
 
 
 //        HeightRangePlacementModifier.uniform(YOffset.aboveBottom(0), YOffset.aboveBottom(200)), BiomePlacementModifier.of());

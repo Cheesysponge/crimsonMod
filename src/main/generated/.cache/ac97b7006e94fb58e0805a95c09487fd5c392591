@@ -1,4 +1,4 @@
-// 1.20.1	2025-01-26T22:32:55.8646981	crimson/Model Definitions
+// 1.20.1	2025-01-29T10:23:03.6922654	crimson/Model Definitions
 005d9a63f74ee3de7e6918271c6ba663c3edd458 assets\crimson\models\item\sapphire_leggings.json
 37a9dfafec201c063e1e347792220e1af54599f6 assets\crimson\models\item\sapphire_chestplate.json
 64799a12dedb47157d221423b3a089b9b0cc23ee assets\crimson\models\item\sapphire_helmet_netherite_trim.json
@@ -25,9 +25,10 @@ f8f67d95fdfad2a207c6f96507ff89c277f90028 assets\crimson\models\item\sapphire_che
 12acfa766bf8e38b9454861347f43a7ef366ebee assets\crimson\blockstates\nether_sapphire_ore.json
 5c300eeb1b7db6323b05a2655c3c116067938e34 assets\crimson\models\item\sapphire_pickaxe.json
 7901a588fd22f687238e857ee7a7ba715113042b assets\crimson\models\item\sapphire_axe.json
+767b0af81ea4f12836ffe57a272c4e7f2e14e9f8 assets\crimson\models\item\sapphire_saber.json
 f8bbe94bed1a5d91a9782284924f344fc53a5bd5 assets\crimson\models\block\nether_sapphire_ore.json
-c699b0105a69d0251e3cc0fd6731b638e6172ac6 assets\crimson\models\item\sapphire.json
 39ff04739af63359e0f0d1601c484fd19033d979 assets\crimson\models\item\sapphire_helmet_copper_trim.json
+c699b0105a69d0251e3cc0fd6731b638e6172ac6 assets\crimson\models\item\sapphire.json
 bbf7bd770fb11b7e5f7a564eb7c22f235d8860e3 assets\crimson\models\item\blackstone_spike.json
 821dbb2662a161fde211609fec81227f79a164f2 assets\crimson\models\item\crimson_eye.json
 a356161147abbea31713afb73fd8826771b8758d assets\crimson\models\item\sapphire_helmet_amethyst_trim.json

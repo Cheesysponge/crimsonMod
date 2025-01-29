@@ -27,7 +27,7 @@ public class ModItemGroup {
                     }).build());
     public static final ItemGroup GEAR = Registry.register(Registries.ITEM_GROUP,
             new Identifier(Crimson.MODID, "gear"),
-            FabricItemGroup.builder().displayName(Text.translatable("itemGroup.crimson.main"))
+            FabricItemGroup.builder().displayName(Text.translatable("itemGroup.crimson.gear"))
                     .icon(() -> new ItemStack(ModItems.SAPPHIRE_SWORD)).entries((displayContext, entries) -> {
                         for(Item tool : ModItems.tools){
                             entries.add(tool);

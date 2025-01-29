@@ -10,9 +10,8 @@ import static net.minecraft.world.gen.feature.NetherForestVegetationFeatureConfi
 
 public class ModWorldGenerator {
     public static void generate(){
-        Registry.register(Registries.FEATURE, ModFeature.BLACKSTONE_VEGETATION_ID, ModFeature.BLACKSTONE_VEGETATION);
-        Registry.register(Registries.FEATURE, ModFeature.BLACKSTONE_SPIKES_ID, ModFeature.BLACKSTONE_SPIKES);
-        Registry.register(Registries.FEATURE, ModFeature.LARGE_BLACKSTONE_SPIKES_ID, ModFeature.LARGE_BLACKSTONE_SPIKES);
+
+
 
 
         ModOreGeneration.generateOres();

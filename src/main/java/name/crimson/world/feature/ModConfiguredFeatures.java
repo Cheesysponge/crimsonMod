@@ -14,6 +14,7 @@ import net.minecraft.structure.rule.RuleTest;
 import net.minecraft.structure.rule.TagMatchRuleTest;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Direction;
+import net.minecraft.util.math.floatprovider.ClampedNormalFloatProvider;
 import net.minecraft.util.math.floatprovider.UniformFloatProvider;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
@@ -44,6 +45,9 @@ public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?,?>> BLACKSTONE_SPIKE_KEY = registerKey("blackstone_spike");
 
     public static final RegistryKey<ConfiguredFeature<?,?>> LARGE_BLACKSTONE_SPIKE_KEY = registerKey("large_blackstone_spike");
+
+    public static final RegistryKey<ConfiguredFeature<?,?>> BLACKSTONE_SPIKE_CLUSTER_KEY = registerKey("blackstone_spike_cluster");
+
 
 
 
@@ -76,6 +80,11 @@ public class ModConfiguredFeatures {
                         0.33f, UniformFloatProvider.create(0.3f, 0.9f), UniformFloatProvider.create(0.4f, 1.0f),
                         UniformFloatProvider.create(0.0f, 0.3f), 4, 0.6f));
 
+        register(context, BLACKSTONE_SPIKE_CLUSTER_KEY, ModFeature.BLACKSTONE_SPIKES_CLUSTER,
+                new DripstoneClusterFeatureConfig(12, UniformIntProvider.create(3, 6), UniformIntProvider.create(2, 8),
+                        1, 3, UniformIntProvider.create(2, 4), UniformFloatProvider.create(0.3f, 0.7f),
+                        ClampedNormalFloatProvider.create(0.1f, 0.3f, 0.1f, 0.9f), 0.1f, 3,
+                        8));
 
     }
 

@@ -2,6 +2,7 @@ package name.crimson.item;
 
 import name.crimson.Crimson;
 import name.crimson.entity.ModEntities;
+import name.crimson.item.custom.SaberItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
@@ -23,6 +24,8 @@ public class ModItems {
     public static final Item SAPPHIRE_AXE = registerItem("sapphire_axe", new AxeItem(ModToolMaterials.SAPPHIRE,6,-3.1f,new FabricItemSettings().rarity(Rarity.UNCOMMON).maxCount(1)));
     public static final Item SAPPHIRE_SHOVEL = registerItem("sapphire_shovel", new ShovelItem(ModToolMaterials.SAPPHIRE,3,-2.4f,new FabricItemSettings().rarity(Rarity.UNCOMMON).maxCount(1)));
     public static final Item SAPPHIRE_HOE = registerItem("sapphire_hoe", new HoeItem(ModToolMaterials.SAPPHIRE,-2,-1.0f,new FabricItemSettings().rarity(Rarity.UNCOMMON).maxCount(1)));
+    public static final Item SAPPHIRE_SABER = registerItem("sapphire_saber", new SaberItem(ModToolMaterials.SAPPHIRE,3,-2.4f,new FabricItemSettings().rarity(Rarity.UNCOMMON).maxCount(1)));
+
 
     public static final Item SAPPHIRE_HELMET = registerItem("sapphire_helmet", new ArmorItem(ModArmorMaterials.SAPPHIRE, ArmorItem.Type.HELMET,new FabricItemSettings().rarity(Rarity.UNCOMMON).maxCount(1)));
     public static final Item SAPPHIRE_CHESTPLATE = registerItem("sapphire_chestplate", new ArmorItem(ModArmorMaterials.SAPPHIRE, ArmorItem.Type.CHESTPLATE,new FabricItemSettings().rarity(Rarity.UNCOMMON).maxCount(1)));
@@ -33,7 +36,7 @@ public class ModItems {
 
     public static final Item[] armor = {SAPPHIRE_HELMET,SAPPHIRE_CHESTPLATE,SAPPHIRE_LEGGINGS,SAPPHIRE_BOOTS};
 
-    public static final Item[] tools = {SAPPHIRE_SWORD,SAPPHIRE_PICKAXE,SAPPHIRE_AXE,SAPPHIRE_SHOVEL,SAPPHIRE_HOE};
+    public static final Item[] tools = {SAPPHIRE_SWORD,SAPPHIRE_PICKAXE,SAPPHIRE_AXE,SAPPHIRE_SHOVEL,SAPPHIRE_HOE,SAPPHIRE_SABER};
 
     public static final Item[] items = {CHOMPER_SPAWN_EGG,CRIMSON_EYE, TIGER_SPAWN_EGG, NETHER_WART_BREAD, SAPPHIRE};
     public static final Item[] items_for_textures = {CRIMSON_EYE, NETHER_WART_BREAD, SAPPHIRE};
