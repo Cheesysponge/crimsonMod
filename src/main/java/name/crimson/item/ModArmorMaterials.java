@@ -22,7 +22,13 @@ public enum  ModArmorMaterials implements StringIdentifiable,ArmorMaterial {
         map.put(Type.LEGGINGS, 6);
         map.put(Type.CHESTPLATE, 8);
         map.put(Type.HELMET, 3);
-    }), 30, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 4f, 0.2f, () -> Ingredient.ofItems(ModItems.SAPPHIRE));
+    }), 30, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 4f, 0.2f, () -> Ingredient.ofItems(ModItems.SAPPHIRE)),
+    RUBY("ruby", 36, Util.make(new EnumMap(Type.class), (map) -> {
+        map.put(Type.BOOTS, 3);
+        map.put(Type.LEGGINGS, 6);
+        map.put(Type.CHESTPLATE, 8);
+        map.put(Type.HELMET, 3);
+    }), 30, SoundEvents.ITEM_ARMOR_EQUIP_CHAIN, 3.5f, 0f    , () -> Ingredient.ofItems(ModItems.RUBY));
 
 
     private static final EnumMap<ArmorItem.Type, Integer> BASE_DURABILITY = Util.make(new EnumMap(Type.class), (map) -> {

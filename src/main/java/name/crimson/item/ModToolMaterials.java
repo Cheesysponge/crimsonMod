@@ -9,7 +9,9 @@ import net.minecraft.util.Lazy;
 import java.util.function.Supplier;
 
 public enum ModToolMaterials implements ToolMaterial {
-    SAPPHIRE(MiningLevels.NETHERITE, 908, 9.5f, 4f, 30, () -> Ingredient.ofItems(ModItems.SAPPHIRE));
+    SAPPHIRE(MiningLevels.NETHERITE, 908, 9.5f, 4f, 30, () -> Ingredient.ofItems(ModItems.SAPPHIRE)),
+    RUBY(MiningLevels.NETHERITE, 1701, 10f, 4.5f, 30, () -> Ingredient.ofItems(ModItems.RUBY));
+
 
     private final int miningLevel;
     private final int itemDurability;

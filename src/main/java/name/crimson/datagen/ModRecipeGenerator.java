@@ -38,6 +38,9 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
         for(Item tool : ModItems.tools) {
             ingotRecipeGenerator(exporter,tool);
         }
+        for(Item armor : ModItems.armor) {
+            ingotRecipeGenerator(exporter,armor);
+        }
         ingotRecipeGenerator(exporter, Item.fromBlock(ModBlocks.SAPPHIRE_BLOCK));
     }
 
@@ -68,8 +71,8 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
         if(OutName.contains("sapphire")) {
             First = ModItems.SAPPHIRE;
         }
-        else if(OutName.contains("copper_gold")) {
-            //First = ModItems.COPPER_GOLD_INGOT;
+        else if(OutName.contains("ruby")) {
+            First = ModItems.RUBY;
         }
         else{
             First = Items.BARRIER;
@@ -80,6 +83,20 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                     .pattern("#")
                     .pattern("#")
                     .pattern("I")
+                    .input('I', Items.STICK)
+                    .input('#', First)
+
+                    .criterion(FabricRecipeProvider.hasItem(Items.STICK),
+                            FabricRecipeProvider.conditionsFromItem(Items.STICK))
+                    .criterion(FabricRecipeProvider.hasItem(First),
+                            FabricRecipeProvider.conditionsFromItem(First))
+                    .offerTo(exporter, new Identifier("generated_" + FabricRecipeProvider.getRecipeName(Output)));
+        }
+        if(getRecipeName(Output).contains("saber")){
+            ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, Output)
+                    .pattern("###")
+                    .pattern("###")
+                    .pattern(" I ")
                     .input('I', Items.STICK)
                     .input('#', First)
 

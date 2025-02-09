@@ -25,7 +25,8 @@ public class ModDimensions {
         CustomPortalBuilder.beginPortal().frameBlock(Blocks.CRIMSON_HYPHAE)
                 .destDimID(new Identifier(Crimson.MODID, "crimsondim"))
                 .tintColor(227, 0, 0)
-                .customIgnitionSource(PortalIgnitionSource.ItemUseSource(ModItems.CRIMSON_EYE))
+                .lightWithItem(ModItems.CRIMSON_EYE)
+                .onlyLightInOverworld()
                 .registerPortal();
     }
 }
