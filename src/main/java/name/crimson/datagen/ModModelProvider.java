@@ -23,6 +23,8 @@ public class ModModelProvider extends FabricModelProvider {
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.NETHER_SAPPHIRE_ORE);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SAPPHIRE_BLOCK);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.NETHER_RUBY_ORE);
+
         blockStateModelGenerator.registerParentedItemModel(ModBlocks.BLACKSTONE_FLOWER, Identifier.of("crimson","block/"+getRecipeName(ModBlocks.BLACKSTONE_FLOWER.asItem())));
 
 

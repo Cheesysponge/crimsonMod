@@ -1,4 +1,5 @@
-// 1.20.1	2025-02-09T13:21:24.2351327	crimson/Block Loot Tables
+// 1.20.1	2025-02-10T17:28:50.5435974	crimson/Block Loot Tables
+be5cdac7e5ebfaeecb22fc0d9e5b79e6384dcdfe data\crimson\loot_tables\blocks\nether_ruby_ore.json
 f65ccdae6b4ee6d607e766d4c9a33a06518efb26 data\crimson\loot_tables\blocks\blackstone_spike.json
 f1f69b50f29bec7b8797ba8a006e9581658e7f76 data\crimson\loot_tables\blocks\blackstone_flower.json
 e4d19e59ce11756d0e8dcdbe9c79a1b4995f5c44 data\crimson\loot_tables\blocks\crimson_chomper_eye.json

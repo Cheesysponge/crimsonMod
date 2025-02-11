@@ -39,6 +39,7 @@ public class ModConfiguredFeatures {
 
     public static final RegistryKey<ConfiguredFeature<?,?>> NETHER_SAPPHIRE_ORE_KEY = registerKey("nether_sapphire_ore");
 
+    public static final RegistryKey<ConfiguredFeature<?,?>> NETHER_RUBY_ORE_KEY = registerKey("nether_ruby_ore");
 
     public static final RegistryKey<ConfiguredFeature<?,?>> BLACKSTONE_FLOWER_KEY = registerKey("blackstone_flower");
 
@@ -57,11 +58,19 @@ public class ModConfiguredFeatures {
         var placedFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.PLACED_FEATURE);
 
         RuleTest netherReplaceables = new TagMatchRuleTest(TagKey.of(RegistryKeys.BLOCK, new Identifier(Crimson.MODID, "netherrack")));
+        RuleTest blackstone = new TagMatchRuleTest(TagKey.of(RegistryKeys.BLOCK, new Identifier(Crimson.MODID, "blackstone")));
+
 
         List<OreFeatureConfig.Target> netherSapphireOres =
                 List.of(OreFeatureConfig.createTarget(netherReplaceables, ModBlocks.NETHER_SAPPHIRE_ORE.getDefaultState()));
 
+        List<OreFeatureConfig.Target> netherRubyOres =
+                List.of(OreFeatureConfig.createTarget(blackstone, ModBlocks.NETHER_RUBY_ORE.getDefaultState()));
+
         register(context, NETHER_SAPPHIRE_ORE_KEY, Feature.ORE, new OreFeatureConfig(netherSapphireOres, 8));
+
+        register(context, NETHER_RUBY_ORE_KEY, Feature.ORE, new OreFeatureConfig(netherRubyOres, 8));
+
 
         register(context, BLACKSTONE_FLOWER_KEY, ModFeature.BLACKSTONE_VEGETATION,
                 new NetherForestVegetationFeatureConfig(BlockStateProvider.of(ModBlocks.BLACKSTONE_FLOWER), 1, 1));

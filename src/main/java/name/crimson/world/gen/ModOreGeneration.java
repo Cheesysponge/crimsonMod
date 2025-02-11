@@ -10,5 +10,7 @@ public class ModOreGeneration {
     public static void generateOres() {
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(ModBiomes.CRIMSON),
                 GenerationStep.Feature.UNDERGROUND_ORES, ModPlacedFeatures.NETHER_SAPPHIRE_ORE_PLACED_KEY);
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(ModBiomes.CRIMSON),
+                GenerationStep.Feature.UNDERGROUND_ORES, ModPlacedFeatures.NETHER_RUBY_ORE_PLACED_KEY);
     }
 }

@@ -24,6 +24,7 @@ public class ModPlacedFeatures {
 
 
     public static final RegistryKey<PlacedFeature> NETHER_SAPPHIRE_ORE_PLACED_KEY = registerKey("nether_sapphire_ore_placed");
+    public static final RegistryKey<PlacedFeature> NETHER_RUBY_ORE_PLACED_KEY = registerKey("nether_ruby_ore_placed");
 
     public static final RegistryKey<PlacedFeature> BLACKSTONE_FLOWER_PLACED_KEY = registerKey("blackstone_flower_placed");
 
@@ -45,6 +46,10 @@ public class ModPlacedFeatures {
         register(context, NETHER_SAPPHIRE_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.NETHER_SAPPHIRE_ORE_KEY),
                 modifiersWithCount(16, // VeinsPerChunk
                         HeightRangePlacementModifier.uniform(YOffset.aboveBottom(300), YOffset.aboveBottom(600))));
+        register(context, NETHER_RUBY_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.NETHER_RUBY_ORE_KEY),
+                modifiersWithCount(16, // VeinsPerChunk
+                        HeightRangePlacementModifier.uniform(YOffset.aboveBottom(0), YOffset.aboveBottom(600))));
+
 
         register(context, BLACKSTONE_FLOWER_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.BLACKSTONE_FLOWER_KEY),
                 RarityFilterPlacementModifier.of(2), SquarePlacementModifier.of(), CountMultilayerPlacementModifier.of(1), BiomePlacementModifier.of());

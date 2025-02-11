@@ -1,4 +1,4 @@
-// 1.20.1	2025-02-09T13:21:24.2361609	crimson/Recipes
+// 1.20.1	2025-02-10T17:28:50.5445972	crimson/Recipes
 6d687bd6313e123c807e1d644cab2294079c54ee data\crimson\advancements\recipes\misc\generated_sapphire_block.json
 9755e503f816fd2b0a5735b3f8989b8847a351fd data\crimson\advancements\recipes\misc\generated_sapphire_hoe.json
 c08ac125b77923cce9d6605ccdeb2269aff87172 data\crimson\recipes\generated_sapphire_helmet.json
@@ -14,8 +14,8 @@ a4358e3d0f3990cea97f6be28c5f9f9266994826 data\crimson\advancements\recipes\misc\
 d7e2dc15c3fdab8d1b4c6e61d80c5803ba5c2f08 data\crimson\recipes\generated_sapphire_hoe.json
 4784f1c5b148827ba5534a3f68d17a2babd46815 data\crimson\recipes\generated_ruby_hoe.json
 643f20c6cdc10e0bd6ecb2e9fcc864ca8a612c4b data\crimson\advancements\recipes\misc\generated_sapphire_leggings.json
-ccea2f3e909dc43e7682a62b7f35ee037a283425 data\crimson\advancements\recipes\misc\generated_ruby_pickaxe.json
 3541da9aa4c0e85e5a473dcc2974719b68bdc8b2 data\crimson\recipes\generated_ruby_pickaxe.json
+ccea2f3e909dc43e7682a62b7f35ee037a283425 data\crimson\advancements\recipes\misc\generated_ruby_pickaxe.json
 24cb0a3eeb2ca0e3c3a26a448e3c61d7d3013584 data\crimson\recipes\generated_ruby_helmet.json
 75b37ce2c9245be4cd1b710f88693f61b26e450c data\crimson\recipes\generated_ruby_boots.json
 ae48c0f7ed0b6569e004c1aed9f03a61192cf918 data\crimson\advancements\recipes\misc\generated_craft_crimson_eye.json
