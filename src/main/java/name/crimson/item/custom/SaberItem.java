@@ -2,6 +2,7 @@ package name.crimson.item.custom;
 
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
+import name.crimson.item.ModToolMaterials;
 import name.crimson.particle.ModParticles;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -15,6 +16,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
@@ -33,12 +35,15 @@ public class SaberItem extends SwordItem {
 
     private final ParticleEffect sweep;
     private final ParticleEffect crit;
+    private final ToolMaterial material;
+
 
 
     public SaberItem(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, Item.Settings settings, ParticleEffect SweepParticle, ParticleEffect CritParticle) {
         super(toolMaterial, attackDamage, attackSpeed, settings);
         this.sweep = SweepParticle;
         this.crit = CritParticle;
+        this.material = toolMaterial;
 
     }
 
@@ -62,6 +67,15 @@ public class SaberItem extends SwordItem {
                 MinecraftClient.getInstance().particleManager.addEmitter(target, this.crit);
             }
 
+        }
+        target.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 40, 0));
+        target.addStatusEffect(new StatusEffectInstance(StatusEffects.MINING_FATIGUE, 40, 0));
+        target.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 40, 0));
+        if(this.material == ModToolMaterials.RUBY){
+            target.setOnFireFor(2);
+        }
+        if(this.material == ModToolMaterials.SAPPHIRE){
+            target.setFrozenTicks(target.getFrozenTicks()+50);
         }
         return true;
     }
