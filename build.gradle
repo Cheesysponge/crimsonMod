@@ -54,7 +54,7 @@ dependencies {
     modImplementation "net.kyrptonaught:customportalapi:${project.portal_version}"
     include "net.kyrptonaught:customportalapi:${project.portal_version}"
 
-    modImplementation "squeek.appleskin:appleskin-fabric:mc1.20-2.5.1"
+    modImplementation "squeek.appleskin:appleskin-fabric:${project.appleskin_version}"
     modImplementation "com.terraformersmc:modmenu:${project.modmenu_version}"
 
 

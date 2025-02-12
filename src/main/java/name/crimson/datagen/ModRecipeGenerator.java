@@ -5,6 +5,7 @@ import name.crimson.block.ModBlocks;
 import name.crimson.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
@@ -21,7 +22,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
     }
 
     @Override
-    public void generate(Consumer<RecipeJsonProvider> exporter) {
+    public void generate(RecipeExporter exporter) {
         OneItemShapelessRecipeGenerator(Items.NETHER_WART,3,ModItems.NETHER_WART_BREAD,exporter);
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.CRIMSON_EYE, 1)
@@ -44,7 +45,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
         ingotRecipeGenerator(exporter, Item.fromBlock(ModBlocks.SAPPHIRE_BLOCK));
     }
 
-    public void TwoItemShapelessRecipeGenerator(Item First,Item Second, Item output, Consumer<RecipeJsonProvider> exporter) {
+    public void TwoItemShapelessRecipeGenerator(Item First,Item Second, Item output, RecipeExporter exporter) {
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, output, 1)
                 .input(First)
                 .input(Second)
@@ -54,7 +55,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                         FabricRecipeProvider.conditionsFromItem(Second))
                 .offerTo(exporter, new Identifier("generated_craft_" + FabricRecipeProvider.getRecipeName(output)));
     }
-    public void OneItemShapelessRecipeGenerator(Item First,int count, Item output, Consumer<RecipeJsonProvider> exporter) {
+    public void OneItemShapelessRecipeGenerator(Item First,int count, Item output, RecipeExporter exporter) {
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, output, 1)
                 .input(First, count)
                 .criterion(FabricRecipeProvider.hasItem(First),
@@ -62,7 +63,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
 
                 .offerTo(exporter, new Identifier("generated_craft_" + FabricRecipeProvider.getRecipeName(output)));
     }
-    public void ingotRecipeGenerator(Consumer<RecipeJsonProvider> exporter, Item Output){
+    public void ingotRecipeGenerator(RecipeExporter exporter, Item Output){
 
         Item First = Items.BARRIER;
         String OutName = getRecipeName(Output);
