@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:generated_craft_sapphire"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -43,6 +43,5 @@
     "recipes": [
       "minecraft:generated_ruby_axe"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

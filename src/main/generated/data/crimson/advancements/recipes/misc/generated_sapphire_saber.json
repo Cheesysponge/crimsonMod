@@ -43,6 +43,5 @@
     "recipes": [
       "minecraft:generated_sapphire_saber"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

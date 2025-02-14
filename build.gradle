@@ -55,7 +55,6 @@ dependencies {
     include "net.kyrptonaught:customportalapi:${project.portal_version}"
 
     modImplementation "squeek.appleskin:appleskin-fabric:${project.appleskin_version}"
-    //modImplementation "com.terraformersmc:modmenu:${project.modmenu_version}"
 
 
     // Conditional dependencies for JEI or REI

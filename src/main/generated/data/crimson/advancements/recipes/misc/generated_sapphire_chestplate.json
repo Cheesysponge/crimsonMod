@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:generated_sapphire_chestplate"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:generated_craft_nether_wart_bread"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

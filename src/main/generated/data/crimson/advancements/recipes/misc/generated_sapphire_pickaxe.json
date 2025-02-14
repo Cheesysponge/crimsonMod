@@ -43,6 +43,5 @@
     "recipes": [
       "minecraft:generated_sapphire_pickaxe"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

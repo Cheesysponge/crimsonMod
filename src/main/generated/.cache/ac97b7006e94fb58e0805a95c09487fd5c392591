@@ -1,8 +1,8 @@
-// 1.20.2	2025-02-11T18:51:09.7303239	crimson/Model Definitions
+// 1.20.4	2025-02-13T20:21:26.4523991	crimson/Model Definitions
 37a9dfafec201c063e1e347792220e1af54599f6 assets\crimson\models\item\sapphire_chestplate.json
 94a944aeda96249262747ddb5990dbcc03f780fd assets\crimson\models\item\ruby_boots_quartz_trim.json
-64799a12dedb47157d221423b3a089b9b0cc23ee assets\crimson\models\item\sapphire_helmet_netherite_trim.json
 053af3ee36b99eaff50c5967124c54d469a0172a assets\crimson\models\item\ruby_helmet_diamond_trim.json
+64799a12dedb47157d221423b3a089b9b0cc23ee assets\crimson\models\item\sapphire_helmet_netherite_trim.json
 6bce8379dc86cd812f16092acd9b871f5742ed94 assets\crimson\models\item\nether_ruby_ore.json
 73498ba88feffc8ec448c51689b579b79cba6a2b assets\crimson\models\item\ruby_boots_gold_trim.json
 9438ad421ab36baa4004ed7fa2c16ed72208123b assets\crimson\models\item\sapphire_helmet_diamond_trim.json
@@ -39,8 +39,8 @@ c0c118471b81508d9328c729750d4277a877c0d3 assets\crimson\models\item\sapphire_hel
 0ee2145f0589be7d2cb4527ac8477fdf81b81e47 assets\crimson\models\item\ruby_saber.json
 9e10e32f35db3876460983e3f72cc4e8a74f344e assets\crimson\blockstates\sapphire_block.json
 d3e4eeafbfd9fb4cc1c2aac68adceff1c041727a assets\crimson\models\item\sapphire_chestplate_quartz_trim.json
-bc4982b5e3f5792a4f5fef5059065835c20a70e7 assets\crimson\models\item\ruby_pickaxe.json
 add6fff5e90e075b1026626fd965ac7c402b1010 assets\crimson\models\item\sapphire_block.json
+bc4982b5e3f5792a4f5fef5059065835c20a70e7 assets\crimson\models\item\ruby_pickaxe.json
 a573132029d9eb0995e9f6ee34e5f4ab0eae4bfa assets\crimson\models\item\sapphire_boots_quartz_trim.json
 9dcd3f9c1cf9c743500595e2c0f502545f366e71 assets\crimson\models\item\sapphire_leggings_diamond_trim.json
 afc8fe65cc659aaecc22610033a7d83a062d113a assets\crimson\models\item\ruby_chestplate.json
@@ -59,8 +59,8 @@ eb68cf53b1b31d9a2fd9cebb148a1565b7c7e6ca assets\crimson\models\item\sapphire_boo
 d17da29e50e9de04adb88865e6ffaffa4696832c assets\crimson\models\item\ruby_boots_amethyst_trim.json
 6b2a9c220ae3cfbf26f8d811a5f27def50d4c9c2 assets\crimson\models\item\sapphire_leggings_gold_trim.json
 c3466d59f70b52359300914c401f8f8e85a69874 assets\crimson\models\item\sapphire_helmet_lapis_trim.json
-9d406c681fba1de4fb5c8dda76bff7a194db3eb1 assets\crimson\models\item\sapphire_hoe.json
 ce076d9f290e5c021c00da1f55ee3d7e61ae1e8f assets\crimson\models\item\sapphire_chestplate_copper_trim.json
+9d406c681fba1de4fb5c8dda76bff7a194db3eb1 assets\crimson\models\item\sapphire_hoe.json
 eb1ff55d8a68bb420cb4a6633ebd9ba6e4f6c4e2 assets\crimson\models\item\sapphire_helmet_quartz_trim.json
 fa057e436ced7bb2b70a62a4a8270c0c1e9fad6f assets\crimson\models\item\ruby_leggings_quartz_trim.json
 f99f6644ce7a43e7e949415df76dfa08a4a6eade assets\crimson\models\item\sapphire_boots_iron_trim.json

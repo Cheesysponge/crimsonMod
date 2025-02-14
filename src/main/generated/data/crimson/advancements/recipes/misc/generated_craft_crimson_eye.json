@@ -43,6 +43,5 @@
     "recipes": [
       "minecraft:generated_craft_crimson_eye"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

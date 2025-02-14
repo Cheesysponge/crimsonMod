@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:generated_sapphire_boots"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

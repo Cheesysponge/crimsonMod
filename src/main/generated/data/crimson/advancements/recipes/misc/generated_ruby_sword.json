@@ -43,6 +43,5 @@
     "recipes": [
       "minecraft:generated_ruby_sword"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }
