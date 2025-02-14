@@ -21,15 +21,12 @@ import java.awt.*;
 
 public class ModBlocks {
     public static final Block CRIMSON_CHOMPER_EYE = registerBlock("crimson_chomper_eye",
-            new ButtonBlock(FabricBlockSettings.copy(Blocks.CRIMSON_PLANKS).strength(1f).luminance((state) -> 16),
-                    new BlockSetType("crimson_chomper_eye"
-            ),10,false),new FabricItemSettings().fireproof().food(ModFoodComponents.FUNGI));
+            new ButtonBlock(new BlockSetType("crimson_chomper_eye"
+            ),10,FabricBlockSettings.copy(Blocks.CRIMSON_PLANKS).strength(1f).luminance((state) -> 16)),new FabricItemSettings().fireproof().food(ModFoodComponents.FUNGI));
     public static final Block NETHER_SAPPHIRE_ORE = registerBlock("nether_sapphire_ore",
-            new ExperienceDroppingBlock(FabricBlockSettings.copy(Blocks.NETHER_GOLD_ORE).strength(4f).requiresTool().luminance((state) -> 0),
-                    UniformIntProvider.create(4,8)));
+            new ExperienceDroppingBlock(UniformIntProvider.create(4,8),FabricBlockSettings.copy(Blocks.NETHER_GOLD_ORE).strength(4f).requiresTool().luminance((state) -> 0)));
     public static final Block NETHER_RUBY_ORE = registerBlock("nether_ruby_ore",
-            new ExperienceDroppingBlock(FabricBlockSettings.copy(Blocks.NETHER_GOLD_ORE).strength(7f).requiresTool().luminance((state) -> 0),
-                    UniformIntProvider.create(4,8)));
+            new ExperienceDroppingBlock(UniformIntProvider.create(4,8),FabricBlockSettings.copy(Blocks.NETHER_GOLD_ORE).strength(7f).requiresTool().luminance((state) -> 0)));
     public static final Block SAPPHIRE_BLOCK  = registerBlock("sapphire_block",new Block(FabricBlockSettings.copy(Blocks.DIAMOND_BLOCK).strength(4f).requiresTool()));
     public static final Block BLACKSTONE_FLOWER = registerBlock("blackstone_flower", new StrangeFlower(StatusEffects.FIRE_RESISTANCE,1000,
             FabricBlockSettings.copy(Blocks.DANDELION).luminance((state) -> 6).dynamicBounds().strength(1f)),

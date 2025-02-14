@@ -33,7 +33,7 @@ repositories {
     repositories {
         maven { url "https://maven.ryanliptak.com/" }
     }
-    maven { url "https://maven.terraformersmc.com/" }
+    //maven { url "https://maven.terraformersmc.com/" }
 
     // You can add additional repositories if needed for other dependencies.
 }
@@ -55,7 +55,7 @@ dependencies {
     include "net.kyrptonaught:customportalapi:${project.portal_version}"
 
     modImplementation "squeek.appleskin:appleskin-fabric:${project.appleskin_version}"
-    modImplementation "com.terraformersmc:modmenu:${project.modmenu_version}"
+    //modImplementation "com.terraformersmc:modmenu:${project.modmenu_version}"
 
 
     // Conditional dependencies for JEI or REI
