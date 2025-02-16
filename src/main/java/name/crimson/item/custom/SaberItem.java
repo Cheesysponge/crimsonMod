@@ -40,7 +40,7 @@ public class SaberItem extends SwordItem {
 
 
     public SaberItem(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, Item.Settings settings, ParticleEffect SweepParticle, ParticleEffect CritParticle) {
-        super(toolMaterial, attackDamage, attackSpeed, settings);
+        super(toolMaterial, settings);
         this.sweep = SweepParticle;
         this.crit = CritParticle;
         this.material = toolMaterial;
@@ -50,7 +50,7 @@ public class SaberItem extends SwordItem {
 
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        stack.damage(1, attacker, e -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
+        stack.damage(1, attacker, EquipmentSlot.MAINHAND);
         double d = (double) (-MathHelper.sin(attacker.getYaw() * (float) (Math.PI / 180.0)));
         double e = (double) MathHelper.cos(attacker.getYaw() * (float) (Math.PI / 180.0));
         boolean isCrit = attacker.fallDistance > 0.0F

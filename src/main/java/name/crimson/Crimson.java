@@ -23,9 +23,9 @@ public class Crimson implements ModInitializer {
 
     @Override
     public void onInitialize() {
+
         ModConfiguredFeatures.registerConfiguredFeatures();
 
-        GeckoLib.initialize();
         ModDimensions.register();
         ModEntities.registerAttributes();
         ModItems.registerModItems();

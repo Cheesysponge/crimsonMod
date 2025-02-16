@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "crimson:sapphire_block"
-            ]
+            "items": "crimson:sapphire_block"
           }
         ]
       },

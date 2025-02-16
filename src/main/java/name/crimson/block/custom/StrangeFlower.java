@@ -2,6 +2,7 @@ package name.crimson.block.custom;
 
 import net.minecraft.block.*;
 import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.DirectionProperty;
@@ -37,7 +38,7 @@ public class StrangeFlower extends FlowerBlock {
     ).reduce((v1, v2) -> VoxelShapes.combineAndSimplify(v1, v2, BooleanBiFunction.OR)).get();
 
     public StrangeFlower(StatusEffect suspiciousStewEffect, int effectDuration, Settings settings) {
-        super(suspiciousStewEffect,effectDuration, settings);
+        super((RegistryEntry<StatusEffect>) suspiciousStewEffect,effectDuration, settings);
     }
 
     @Override

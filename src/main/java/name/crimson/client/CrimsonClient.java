@@ -16,6 +16,7 @@ public class CrimsonClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
+
         EntityRendererRegistry.register(ModEntities.CHOMPER, ChomperRenderer::new);
         EntityRendererRegistry.register(ModEntities.TIGER, TigerRenderer::new);
         ParticleFactoryRegistry.getInstance().register(ModParticles.BLUE_SWEEP_PARTICLE, BlueSweepParticle.Factory::new);

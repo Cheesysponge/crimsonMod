@@ -11,13 +11,15 @@ import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
+import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.util.Identifier;
 
+import java.util.concurrent.CompletableFuture;
 import java.util.function.Consumer;
 
 public class ModRecipeGenerator extends FabricRecipeProvider {
-    public ModRecipeGenerator(FabricDataOutput dataOutput) {
-        super(dataOutput);
+    public ModRecipeGenerator(FabricDataOutput dataOutput, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
+        super(dataOutput, registriesFuture);
     }
 
     @Override

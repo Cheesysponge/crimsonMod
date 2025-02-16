@@ -4,9 +4,10 @@ import name.crimson.Crimson;
 import name.crimson.entity.custom.ChomperEntity;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
+import software.bernie.geckolib.animation.AnimationState;
+import software.bernie.geckolib.cache.object.GeoBone;
 import software.bernie.geckolib.constant.DataTickets;
-import software.bernie.geckolib.core.animatable.model.CoreGeoBone;
-import software.bernie.geckolib.core.animation.AnimationState;
+
 import software.bernie.geckolib.model.GeoModel;
 import software.bernie.geckolib.model.data.EntityModelData;
 
@@ -28,7 +29,7 @@ public class ChomperModel extends GeoModel<ChomperEntity> {
 
     @Override
     public void setCustomAnimations(ChomperEntity animatable, long instanceId, AnimationState<ChomperEntity> animationState) {
-        CoreGeoBone head = getAnimationProcessor().getBone("everything");
+        GeoBone head = getAnimationProcessor().getBone("everything");
 
         if (head != null) {
             EntityModelData entityData = animationState.getData(DataTickets.ENTITY_MODEL_DATA);
@@ -36,4 +37,6 @@ public class ChomperModel extends GeoModel<ChomperEntity> {
             head.setRotY(entityData.netHeadYaw() * MathHelper.RADIANS_PER_DEGREE + (float)Math.PI);
         }
     }
+
+
 }
