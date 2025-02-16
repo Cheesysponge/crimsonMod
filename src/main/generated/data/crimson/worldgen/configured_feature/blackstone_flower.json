@@ -6,7 +6,10 @@
     "state_provider": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "crimson:blackstone_flower"
+        "Name": "crimson:blackstone_flower",
+        "Properties": {
+          "facing": "north"
+        }
       }
     }
   }

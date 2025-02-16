@@ -1,12 +1,10 @@
 package name.crimson.block;
-import dev.architectury.platform.Mod;
 import name.crimson.Crimson;
 import name.crimson.block.custom.BlackstoneSpike;
 import name.crimson.block.custom.StrangeFlower;
 import name.crimson.item.ModFoodComponents;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
-import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
@@ -15,9 +13,6 @@ import net.minecraft.util.math.intprovider.UniformIntProvider;
 
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
-import org.apache.logging.log4j.core.pattern.AbstractStyleNameConverter;
-
-import java.awt.*;
 
 public class ModBlocks {
     public static final Block CRIMSON_CHOMPER_EYE = registerBlock("crimson_chomper_eye",
@@ -28,7 +23,7 @@ public class ModBlocks {
     public static final Block NETHER_RUBY_ORE = registerBlock("nether_ruby_ore",
             new ExperienceDroppingBlock(UniformIntProvider.create(4,8),FabricBlockSettings.copy(Blocks.NETHER_GOLD_ORE).strength(7f).requiresTool().luminance((state) -> 0)));
     public static final Block SAPPHIRE_BLOCK  = registerBlock("sapphire_block",new Block(FabricBlockSettings.copy(Blocks.DIAMOND_BLOCK).strength(4f).requiresTool()));
-    public static final Block BLACKSTONE_FLOWER = registerBlock("blackstone_flower", new FlowerBlock(StatusEffects.FIRE_RESISTANCE,1000,
+    public static final Block BLACKSTONE_FLOWER = registerBlock("blackstone_flower", new StrangeFlower(StatusEffects.FIRE_RESISTANCE,1000,
             FabricBlockSettings.copy(Blocks.DANDELION).luminance((state) -> 6).dynamicBounds().strength(1f)),
             new Item.Settings().food(ModFoodComponents.BLACKSTONE_FLOWER));
 

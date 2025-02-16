@@ -1,34 +1,36 @@
 package name.crimson.item;
 
+import com.google.common.base.Suppliers;
 import net.minecraft.block.Block;
 import net.minecraft.recipe.Ingredient;
 import net.fabricmc.yarn.constants.MiningLevels;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
+import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Lazy;
 
 import java.util.function.Supplier;
 
 public enum ModToolMaterials implements ToolMaterial {
-    SAPPHIRE(MiningLevels.NETHERITE, 908, 9.5f, 4f, 30, () -> Ingredient.ofItems(ModItems.SAPPHIRE)),
-    RUBY(MiningLevels.NETHERITE, 1701, 10f, 4.5f, 30, () -> Ingredient.ofItems(ModItems.RUBY));
+    SAPPHIRE(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 908, 9.5f, 4f, 30, () -> Ingredient.ofItems(ModItems.SAPPHIRE)),
+    RUBY(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 1701, 10f, 4.5f, 30, () -> Ingredient.ofItems(ModItems.RUBY));
 
 
-    private final int miningLevel;
+    private final TagKey<Block> inverseTag;
     private final int itemDurability;
     private final float miningSpeed;
     private final float attackDamage;
     private final int enchantability;
-    private final Lazy<Ingredient> repairIngredient;
+    private final Supplier<Ingredient> repairIngredient;
 
-    private ModToolMaterials(int miningLevel, int itemDurability, float miningSpeed, float attackDamage, int enchantability, Supplier<Ingredient> repairIngredient) {
-        this.miningLevel = miningLevel;
+    private ModToolMaterials(TagKey<Block> inverseTag, int itemDurability, float miningSpeed, float attackDamage, int enchantability, Supplier<Ingredient> repairIngredient) {
+        this.inverseTag = inverseTag;
         this.itemDurability = itemDurability;
         this.miningSpeed = miningSpeed;
         this.attackDamage = attackDamage;
         this.enchantability = enchantability;
-        this.repairIngredient = new Lazy<Ingredient>(repairIngredient);
+        this.repairIngredient = Suppliers.memoize(repairIngredient::get);
     }
 
     @Override
@@ -48,10 +50,8 @@ public enum ModToolMaterials implements ToolMaterial {
 
     @Override
     public TagKey<Block> getInverseTag() {
-        return null;
+        return this.inverseTag;
     }
-
-
 
     @Override
     public int getEnchantability() {

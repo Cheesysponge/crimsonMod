@@ -1,9 +1,9 @@
 package name.crimson.block.custom;
 
 import net.minecraft.block.*;
+import net.minecraft.component.type.SuspiciousStewEffectsComponent;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.registry.entry.RegistryEntry;
-import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.state.property.Properties;
@@ -19,6 +19,7 @@ import net.minecraft.world.BlockView;
 import java.util.stream.Stream;
 
 public class StrangeFlower extends FlowerBlock {
+
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
     VoxelShape shape = Stream.of(
             Stream.of(
@@ -37,9 +38,10 @@ public class StrangeFlower extends FlowerBlock {
             ).reduce((v1, v2) -> VoxelShapes.combineAndSimplify(v1, v2, BooleanBiFunction.OR)).get()
     ).reduce((v1, v2) -> VoxelShapes.combineAndSimplify(v1, v2, BooleanBiFunction.OR)).get();
 
-    public StrangeFlower(StatusEffect suspiciousStewEffect, int effectDuration, Settings settings) {
-        super((RegistryEntry<StatusEffect>) suspiciousStewEffect,effectDuration, settings);
+    public StrangeFlower(RegistryEntry<StatusEffect> stewEffect, float effectLengthInSeconds, Settings settings) {
+        super(stewEffect, effectLengthInSeconds, settings);
     }
+
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {

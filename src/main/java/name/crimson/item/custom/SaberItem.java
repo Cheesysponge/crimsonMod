@@ -39,7 +39,7 @@ public class SaberItem extends SwordItem {
 
 
 
-    public SaberItem(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, Item.Settings settings, ParticleEffect SweepParticle, ParticleEffect CritParticle) {
+    public SaberItem(ToolMaterial toolMaterial, Item.Settings settings, ParticleEffect SweepParticle, ParticleEffect CritParticle) {
         super(toolMaterial, settings);
         this.sweep = SweepParticle;
         this.crit = CritParticle;

@@ -17,7 +17,7 @@ public class ModItemGroup {
     public static final ItemGroup MAIN = Registry.register(Registries.ITEM_GROUP,
             new Identifier(Crimson.MODID, "main"),
             FabricItemGroup.builder().displayName(Text.translatable("itemGroup.crimson.main"))
-                    .icon(() -> new ItemStack(ModItems.CHOMPER_SPAWN_EGG)).entries((displayContext, entries) -> {
+                    .icon(() -> new ItemStack(ModBlocks.BLACKSTONE_FLOWER)).entries((displayContext, entries) -> {
                         for(Item item : ModItems.items){
                             entries.add(item);
                         }
@@ -28,7 +28,7 @@ public class ModItemGroup {
     public static final ItemGroup GEAR = Registry.register(Registries.ITEM_GROUP,
             new Identifier(Crimson.MODID, "gear"),
             FabricItemGroup.builder().displayName(Text.translatable("itemGroup.crimson.gear"))
-                    .icon(() -> new ItemStack(ModItems.SAPPHIRE_SWORD)).entries((displayContext, entries) -> {
+                    .icon(() -> new ItemStack(ModItems.SAPPHIRE_CHESTPLATE)).entries((displayContext, entries) -> {
                         for(Item tool : ModItems.tools){
                             entries.add(tool);
                         }

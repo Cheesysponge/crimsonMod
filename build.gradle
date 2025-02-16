@@ -68,9 +68,10 @@ dependencies {
     modImplementation "software.bernie.geckolib:geckolib-fabric-${minecraft_version}:${geckolib_version}"
 
     // Conditional dependencies for JEI or REI
-    if (project.runtime_itemlist_mod == "jei") {
-        modImplementation "mezz.jei:jei-${project.jei_minecraft_version}-fabric:${project.jei_version}"
-    } else if (project.runtime_itemlist_mod == "rei") {
+//    if (project.runtime_itemlist_mod == "jei") {
+//        //modImplementation "mezz.jei:jei-${project.jei_minecraft_version}-fabric:${project.jei_version}"
+//    } else
+    if (project.runtime_itemlist_mod == "rei") {
         modImplementation "me.shedaniel:RoughlyEnoughItems-fabric:${project.rei_version}"
 
         // Optional: Overriding architectury dependency due to REI
