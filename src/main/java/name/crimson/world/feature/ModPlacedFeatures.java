@@ -73,7 +73,7 @@ public class ModPlacedFeatures {
 
 
     public static RegistryKey<PlacedFeature> registerKey(String name) {
-        return RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(Crimson.MODID, name));
+        return RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(Crimson.MODID, name));
     }
 
     private static void register(Registerable<PlacedFeature> context, RegistryKey<PlacedFeature> key, RegistryEntry<ConfiguredFeature<?, ?>> configuration,

@@ -15,7 +15,7 @@ import net.minecraft.util.Identifier;
 public class ModItemGroup {
 
     public static final ItemGroup MAIN = Registry.register(Registries.ITEM_GROUP,
-            new Identifier(Crimson.MODID, "main"),
+            Identifier.of(Crimson.MODID, "main"),
             FabricItemGroup.builder().displayName(Text.translatable("itemGroup.crimson.main"))
                     .icon(() -> new ItemStack(ModBlocks.BLACKSTONE_FLOWER)).entries((displayContext, entries) -> {
                         for(Item item : ModItems.items){
@@ -26,7 +26,7 @@ public class ModItemGroup {
                         }
                     }).build());
     public static final ItemGroup GEAR = Registry.register(Registries.ITEM_GROUP,
-            new Identifier(Crimson.MODID, "gear"),
+            Identifier.of(Crimson.MODID, "gear"),
             FabricItemGroup.builder().displayName(Text.translatable("itemGroup.crimson.gear"))
                     .icon(() -> new ItemStack(ModItems.SAPPHIRE_CHESTPLATE)).entries((displayContext, entries) -> {
                         for(Item tool : ModItems.tools){

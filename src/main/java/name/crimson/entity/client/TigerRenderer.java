@@ -15,7 +15,7 @@ public class TigerRenderer extends GeoEntityRenderer<TigerEntity> {
 
     @Override
     public Identifier getTextureLocation(TigerEntity animatable) {
-        return new Identifier(Crimson.MODID, "textures/entity/tiger/tiger.png");
+        return Identifier.of(Crimson.MODID, "textures/entity/tiger/tiger.png");
     }
 
     @Override

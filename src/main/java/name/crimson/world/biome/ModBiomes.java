@@ -2,7 +2,6 @@ package name.crimson.world.biome;
 
 import name.crimson.Crimson;
 import name.crimson.entity.ModEntities;
-import net.minecraft.client.sound.MusicType;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.particle.ParticleTypes;
@@ -10,6 +9,7 @@ import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.sound.BiomeMoodSound;
+import net.minecraft.sound.MusicType;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.biome.*;
@@ -19,7 +19,7 @@ import net.minecraft.world.gen.feature.*;
 
 public class ModBiomes {
     public static final RegistryKey<Biome> CRIMSON = RegistryKey.of(RegistryKeys.BIOME,
-            new Identifier(Crimson.MODID, "crimson"));
+            Identifier.of(Crimson.MODID, "crimson"));
 
     public static void bootstrap(Registerable<Biome> context) {
         context.register(CRIMSON, crimsonBiome(context));

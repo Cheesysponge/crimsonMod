@@ -16,13 +16,13 @@ public class ModParticles {
 
 
     public static void registerParticles() {
-        Registry.register(Registries.PARTICLE_TYPE, new Identifier(Crimson.MODID, "blue_sweep_particle"),
+        Registry.register(Registries.PARTICLE_TYPE, Identifier.of(Crimson.MODID, "blue_sweep_particle"),
                 BLUE_SWEEP_PARTICLE);
-        Registry.register(Registries.PARTICLE_TYPE, new Identifier(Crimson.MODID, "red_sweep_particle"),
+        Registry.register(Registries.PARTICLE_TYPE, Identifier.of(Crimson.MODID, "red_sweep_particle"),
                 RED_SWEEP_PARTICLE);
-        Registry.register(Registries.PARTICLE_TYPE, new Identifier(Crimson.MODID, "red_damage_particle"),
+        Registry.register(Registries.PARTICLE_TYPE, Identifier.of(Crimson.MODID, "red_damage_particle"),
                 RED_CRIT_PARTICLE);
-        Registry.register(Registries.PARTICLE_TYPE, new Identifier(Crimson.MODID, "blue_damage_particle"),
+        Registry.register(Registries.PARTICLE_TYPE, Identifier.of(Crimson.MODID, "blue_damage_particle"),
                 BLUE_CRIT_PARTICLE);
     }
 }

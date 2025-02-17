@@ -14,17 +14,17 @@ import software.bernie.geckolib.model.data.EntityModelData;
 public class ChomperModel extends GeoModel<ChomperEntity> {
     @Override
     public Identifier getModelResource(ChomperEntity animatable) {
-        return new Identifier(Crimson.MODID, "geo/chomper.geo.json");
+        return Identifier.of(Crimson.MODID, "geo/chomper.geo.json");
     }
 
     @Override
     public Identifier getTextureResource(ChomperEntity animatable) {
-        return new Identifier(Crimson.MODID, "textures/entity/chomper/chomper.png");
+        return Identifier.of(Crimson.MODID, "textures/entity/chomper/chomper.png");
     }
 
     @Override
     public Identifier getAnimationResource(ChomperEntity animatable) {
-        return new Identifier(Crimson.MODID, "animations/chomper.animation.json");
+        return Identifier.of(Crimson.MODID, "animations/chomper.animation.json");
     }
 
     @Override

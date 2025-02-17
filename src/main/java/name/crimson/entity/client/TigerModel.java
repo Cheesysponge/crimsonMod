@@ -14,17 +14,17 @@ import software.bernie.geckolib.model.data.EntityModelData;
 public class TigerModel extends GeoModel<TigerEntity> {
     @Override
     public Identifier getModelResource(TigerEntity animatable) {
-        return new Identifier(Crimson.MODID, "geo/tiger.geo.json");
+        return Identifier.of(Crimson.MODID, "geo/tiger.geo.json");
     }
 
     @Override
     public Identifier getTextureResource(TigerEntity animatable) {
-        return new Identifier(Crimson.MODID, "textures/entity/tiger/tiger.png");
+        return Identifier.of(Crimson.MODID, "textures/entity/tiger/tiger.png");
     }
 
     @Override
     public Identifier getAnimationResource(TigerEntity animatable) {
-        return new Identifier(Crimson.MODID, "animations/tiger.animation.json");
+        return Identifier.of(Crimson.MODID, "animations/tiger.animation.json");
     }
 
     @Override

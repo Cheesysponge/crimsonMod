@@ -29,7 +29,7 @@ import java.util.List;
 
 public class ModConfiguredFeatures {
     public static RegistryKey<ConfiguredFeature<?, ?>> registerKey(String name) {
-        return RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, new Identifier(Crimson.MODID, name));
+        return RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, Identifier.of(Crimson.MODID, name));
     }
     private static <FC extends FeatureConfig, F extends Feature<FC>> void register(Registerable<ConfiguredFeature<?, ?>> context,
                                                                                    RegistryKey<ConfiguredFeature<?, ?>> key, F feature, FC configuration) {
@@ -57,8 +57,8 @@ public class ModConfiguredFeatures {
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
         var placedFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.PLACED_FEATURE);
 
-        RuleTest netherReplaceables = new TagMatchRuleTest(TagKey.of(RegistryKeys.BLOCK, new Identifier(Crimson.MODID, "netherrack")));
-        RuleTest blackstone = new TagMatchRuleTest(TagKey.of(RegistryKeys.BLOCK, new Identifier(Crimson.MODID, "blackstone")));
+        RuleTest netherReplaceables = new TagMatchRuleTest(TagKey.of(RegistryKeys.BLOCK, Identifier.of(Crimson.MODID, "netherrack")));
+        RuleTest blackstone = new TagMatchRuleTest(TagKey.of(RegistryKeys.BLOCK, Identifier.of(Crimson.MODID, "blackstone")));
 
 
         List<OreFeatureConfig.Target> netherSapphireOres =

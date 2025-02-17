@@ -15,7 +15,7 @@ public class ChomperRenderer extends GeoEntityRenderer<ChomperEntity> {
 
     @Override
     public Identifier getTextureLocation(ChomperEntity animatable) {
-        return new Identifier(Crimson.MODID, "textures/entity/chomper/chomper.png");
+        return Identifier.of(Crimson.MODID, "textures/entity/chomper/chomper.png");
     }
 
     @Override

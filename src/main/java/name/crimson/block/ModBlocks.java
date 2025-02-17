@@ -32,31 +32,31 @@ public class ModBlocks {
 
     private static Block registerBlock(String name, Block block){
         registerBlockItem(name, block);
-        return Registry.register(Registries.BLOCK, new Identifier(Crimson.MODID, name), block);
+        return Registry.register(Registries.BLOCK, Identifier.of(Crimson.MODID, name), block);
     }
     private static Block registerBlock(String name, Block block, Item.Settings itemSettings){
         registerBlockItem(name, block, itemSettings);
-        return Registry.register(Registries.BLOCK, new Identifier(Crimson.MODID, name), block);
+        return Registry.register(Registries.BLOCK, Identifier.of(Crimson.MODID, name), block);
     }
     private static Block registerBlockWithoutBlockItem(String name, Block block){
-        return Registry.register(Registries.BLOCK, new Identifier(Crimson.MODID, name), block);
+        return Registry.register(Registries.BLOCK, Identifier.of(Crimson.MODID, name), block);
     }
 
     private static Item registerBlockItem(String name, Block block) {
         Item item = null;
         if(name.contains("fungi")) {
-            item = Registry.register(Registries.ITEM, new Identifier(Crimson.MODID, name),
+            item = Registry.register(Registries.ITEM, Identifier.of(Crimson.MODID, name),
                     new BlockItem(block, new Item.Settings().food(ModFoodComponents.FUNGI)));
         }
 
-        item = Registry.register(Registries.ITEM, new Identifier(Crimson.MODID, name),
+        item = Registry.register(Registries.ITEM, Identifier.of(Crimson.MODID, name),
                 new BlockItem(block, new Item.Settings()));
 
         return item;
     }
     private static Item registerBlockItem(String name, Block block, Item.Settings itemSettings) {
         Item item = null;
-        item = Registry.register(Registries.ITEM, new Identifier(Crimson.MODID, name),
+        item = Registry.register(Registries.ITEM, Identifier.of(Crimson.MODID, name),
                 new BlockItem(block, itemSettings));
         return item;
     }

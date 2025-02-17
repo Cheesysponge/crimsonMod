@@ -35,7 +35,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                         FabricRecipeProvider.conditionsFromItem(Items.ENDER_EYE))
                 .criterion(FabricRecipeProvider.hasItem(Items.GOLD_INGOT),
                         FabricRecipeProvider.conditionsFromItem(Items.GOLD_INGOT))
-                .offerTo(exporter, new Identifier("generated_craft_" + FabricRecipeProvider.getRecipeName(ModItems.CRIMSON_EYE)));
+                .offerTo(exporter, Identifier.of("generated_craft_" + FabricRecipeProvider.getRecipeName(ModItems.CRIMSON_EYE)));
 
         for(Item tool : ModItems.tools) {
             ingotRecipeGenerator(exporter,tool);
@@ -54,7 +54,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                         FabricRecipeProvider.conditionsFromItem(First))
                 .criterion(FabricRecipeProvider.hasItem(Second),
                         FabricRecipeProvider.conditionsFromItem(Second))
-                .offerTo(exporter, new Identifier("generated_craft_" + FabricRecipeProvider.getRecipeName(output)));
+                .offerTo(exporter, Identifier.of("generated_craft_" + FabricRecipeProvider.getRecipeName(output)));
     }
     public void OneItemShapelessRecipeGenerator(Item First,int count, Item output, RecipeExporter exporter) {
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, output, 1)
@@ -62,7 +62,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .criterion(FabricRecipeProvider.hasItem(First),
                         FabricRecipeProvider.conditionsFromItem(First))
 
-                .offerTo(exporter, new Identifier("generated_craft_" + FabricRecipeProvider.getRecipeName(output)));
+                .offerTo(exporter, Identifier.of("generated_craft_" + FabricRecipeProvider.getRecipeName(output)));
     }
     public void ingotRecipeGenerator(RecipeExporter exporter, Item Output){
 
@@ -92,7 +92,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                             FabricRecipeProvider.conditionsFromItem(Items.STICK))
                     .criterion(FabricRecipeProvider.hasItem(First),
                             FabricRecipeProvider.conditionsFromItem(First))
-                    .offerTo(exporter, new Identifier("generated_" + FabricRecipeProvider.getRecipeName(Output)));
+                    .offerTo(exporter, Identifier.of("generated_" + FabricRecipeProvider.getRecipeName(Output)));
         }
         if(getRecipeName(Output).contains("saber")){
             ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, Output)
@@ -106,7 +106,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                             FabricRecipeProvider.conditionsFromItem(Items.STICK))
                     .criterion(FabricRecipeProvider.hasItem(First),
                             FabricRecipeProvider.conditionsFromItem(First))
-                    .offerTo(exporter, new Identifier("generated_" + FabricRecipeProvider.getRecipeName(Output)));
+                    .offerTo(exporter, Identifier.of("generated_" + FabricRecipeProvider.getRecipeName(Output)));
         }
         if(getRecipeName(Output).contains("_axe")) {
             ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, Output)
@@ -120,7 +120,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                             FabricRecipeProvider.conditionsFromItem(Items.STICK))
                     .criterion(FabricRecipeProvider.hasItem(First),
                             FabricRecipeProvider.conditionsFromItem(First))
-                    .offerTo(exporter, new Identifier("generated_" + FabricRecipeProvider.getRecipeName(Output)));
+                    .offerTo(exporter, Identifier.of("generated_" + FabricRecipeProvider.getRecipeName(Output)));
         }
         if(getRecipeName(Output).contains("pickaxe")) {
             ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, Output)
@@ -134,7 +134,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                             FabricRecipeProvider.conditionsFromItem(Items.STICK))
                     .criterion(FabricRecipeProvider.hasItem(First),
                             FabricRecipeProvider.conditionsFromItem(First))
-                    .offerTo(exporter, new Identifier("generated_" + FabricRecipeProvider.getRecipeName(Output)));
+                    .offerTo(exporter, Identifier.of("generated_" + FabricRecipeProvider.getRecipeName(Output)));
         }
         if(getRecipeName(Output).contains("hoe")) {
             ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, Output)
@@ -148,7 +148,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                             FabricRecipeProvider.conditionsFromItem(Items.STICK))
                     .criterion(FabricRecipeProvider.hasItem(First),
                             FabricRecipeProvider.conditionsFromItem(First))
-                    .offerTo(exporter, new Identifier("generated_" + FabricRecipeProvider.getRecipeName(Output)));
+                    .offerTo(exporter, Identifier.of("generated_" + FabricRecipeProvider.getRecipeName(Output)));
         }
         if(getRecipeName(Output).contains("shovel")) {
             ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, Output)
@@ -162,7 +162,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                             FabricRecipeProvider.conditionsFromItem(Items.STICK))
                     .criterion(FabricRecipeProvider.hasItem(First),
                             FabricRecipeProvider.conditionsFromItem(First))
-                    .offerTo(exporter, new Identifier("generated_" + FabricRecipeProvider.getRecipeName(Output)));
+                    .offerTo(exporter, Identifier.of("generated_" + FabricRecipeProvider.getRecipeName(Output)));
         }
         if(getRecipeName(Output).contains("chestplate")) {
             ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, Output)
@@ -174,7 +174,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
 
                     .criterion(FabricRecipeProvider.hasItem(First),
                             FabricRecipeProvider.conditionsFromItem(First))
-                    .offerTo(exporter, new Identifier("generated_" + FabricRecipeProvider.getRecipeName(Output)));
+                    .offerTo(exporter, Identifier.of("generated_" + FabricRecipeProvider.getRecipeName(Output)));
         }
         if(getRecipeName(Output).contains("leggings")) {
             ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, Output)
@@ -186,7 +186,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
 
                     .criterion(FabricRecipeProvider.hasItem(First),
                             FabricRecipeProvider.conditionsFromItem(First))
-                    .offerTo(exporter, new Identifier("generated_" + FabricRecipeProvider.getRecipeName(Output)));
+                    .offerTo(exporter, Identifier.of("generated_" + FabricRecipeProvider.getRecipeName(Output)));
         }
         if(getRecipeName(Output).contains("boots")) {
             ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, Output)
@@ -196,7 +196,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
 
                     .criterion(FabricRecipeProvider.hasItem(First),
                             FabricRecipeProvider.conditionsFromItem(First))
-                    .offerTo(exporter, new Identifier("generated_" + FabricRecipeProvider.getRecipeName(Output)));
+                    .offerTo(exporter, Identifier.of("generated_" + FabricRecipeProvider.getRecipeName(Output)));
         }
         if(getRecipeName(Output).contains("helmet")) {
             ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, Output)
@@ -207,7 +207,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
 
                     .criterion(FabricRecipeProvider.hasItem(First),
                             FabricRecipeProvider.conditionsFromItem(First))
-                    .offerTo(exporter, new Identifier("generated_" + FabricRecipeProvider.getRecipeName(Output)));
+                    .offerTo(exporter, Identifier.of("generated_" + FabricRecipeProvider.getRecipeName(Output)));
         }
 
         if(getRecipeName(Output).contains("block")) {
@@ -220,12 +220,12 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
 
                     .criterion(FabricRecipeProvider.hasItem(First),
                             FabricRecipeProvider.conditionsFromItem(First))
-                    .offerTo(exporter, new Identifier("generated_" + FabricRecipeProvider.getRecipeName(Output)));
+                    .offerTo(exporter, Identifier.of("generated_" + FabricRecipeProvider.getRecipeName(Output)));
             ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, First)
                     .input(Output)
                     .criterion(FabricRecipeProvider.hasItem(Output),
                             FabricRecipeProvider.conditionsFromItem(Output))
-                    .offerTo(exporter, new Identifier("generated_craft_" + FabricRecipeProvider.getRecipeName(First)));
+                    .offerTo(exporter, Identifier.of("generated_craft_" + FabricRecipeProvider.getRecipeName(First)));
         }
 
     }

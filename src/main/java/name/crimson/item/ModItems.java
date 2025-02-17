@@ -74,7 +74,7 @@ public class ModItems {
 
 
     private static Item registerItem(String name, Item item) {
-        return Registry.register(Registries.ITEM, new Identifier(Crimson.MODID, name), item);
+        return Registry.register(Registries.ITEM, Identifier.of(Crimson.MODID, name), item);
     }
 
     public static void registerModItems() {

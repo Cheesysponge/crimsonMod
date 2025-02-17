@@ -15,11 +15,11 @@ import net.minecraft.util.Identifier;
 
 public class ModEntities {
     public static final EntityType<ChomperEntity> CHOMPER = Registry.register(
-            Registries.ENTITY_TYPE, new Identifier(Crimson.MODID, "chomper"),
+            Registries.ENTITY_TYPE, Identifier.of(Crimson.MODID, "chomper"),
             FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, ChomperEntity::new)
                     .dimensions(EntityDimensions.fixed(0.75f, 1.25f)).build());
     public static final EntityType<TigerEntity> TIGER = Registry.register(
-            Registries.ENTITY_TYPE, new Identifier(Crimson.MODID, "tiger"),
+            Registries.ENTITY_TYPE, Identifier.of(Crimson.MODID, "tiger"),
             FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, TigerEntity::new)
                     .dimensions(EntityDimensions.fixed(1.5f, 1.75f)).build());
     public static void registerAttributes(){

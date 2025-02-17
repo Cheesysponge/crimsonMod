@@ -1,7 +1,7 @@
-// 1.20.6	2025-02-16T13:27:34.0375426	crimson/Block Loot Tables
-de6f1f9e86cddaff41621b4368175452997758bb data\crimson\loot_tables\blocks\nether_ruby_ore.json
-f65ccdae6b4ee6d607e766d4c9a33a06518efb26 data\crimson\loot_tables\blocks\blackstone_spike.json
-c148e25aa2c5a78509011684de4de4b483c5ad3f data\crimson\loot_tables\blocks\blackstone_flower.json
-e4d19e59ce11756d0e8dcdbe9c79a1b4995f5c44 data\crimson\loot_tables\blocks\crimson_chomper_eye.json
-b1b433ffb3995a5bf31f21b2ea73d22eca288daa data\crimson\loot_tables\blocks\sapphire_block.json
-53f10c32032082b156b48538df732fc6e548ce77 data\crimson\loot_tables\blocks\nether_sapphire_ore.json
+// 1.21	2025-02-16T16:43:53.8106181	crimson/Block Loot Tables
+154a7e7065dd673278aaaa407adfe34f35aae25e data\crimson\loot_table\blocks\nether_ruby_ore.json
+e4d19e59ce11756d0e8dcdbe9c79a1b4995f5c44 data\crimson\loot_table\blocks\crimson_chomper_eye.json
+b1b433ffb3995a5bf31f21b2ea73d22eca288daa data\crimson\loot_table\blocks\sapphire_block.json
+c23af5962c55e72455ab1efea6eecc0141562faa data\crimson\loot_table\blocks\nether_sapphire_ore.json
+d4de48e0bc4cbe7e1d3aeda62cd6fc0aeda38ac0 data\crimson\loot_table\blocks\blackstone_flower.json
+f65ccdae6b4ee6d607e766d4c9a33a06518efb26 data\crimson\loot_table\blocks\blackstone_spike.json
