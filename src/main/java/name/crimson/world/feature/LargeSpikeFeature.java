@@ -37,10 +37,9 @@ public class LargeSpikeFeature extends Feature<LargeDripstoneFeatureConfig> {
             return false;
         }
         Optional<CaveSurface> optional = CaveSurface.create(structureWorldAccess, blockPos, largeDripstoneFeatureConfig.floorToCeilingSearchRange, SpikeHelper::canGenerate, SpikeHelper::canReplaceOrLava);
-        if (!optional.isPresent() || !(optional.get() instanceof CaveSurface.Bounded)) {
+        if (optional.isEmpty() || !(optional.get() instanceof CaveSurface.Bounded bounded)) {
             return false;
         }
-        CaveSurface.Bounded bounded = (CaveSurface.Bounded)optional.get();
         if (bounded.getHeight() < 4) {
             return false;
         }

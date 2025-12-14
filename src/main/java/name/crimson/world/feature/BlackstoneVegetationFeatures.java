@@ -22,24 +22,52 @@ public class BlackstoneVegetationFeatures extends Feature<NetherForestVegetation
     public boolean generate(FeatureContext<NetherForestVegetationFeatureConfig> context) {
         StructureWorldAccess structureWorldAccess = context.getWorld();
         BlockPos blockPos = context.getOrigin();
+
+        // ✅ NEW: remember the origin chunk, and never place outside it
+        int originChunkX = blockPos.getX() >> 4;
+        int originChunkZ = blockPos.getZ() >> 4;
+
         BlockState blockState = structureWorldAccess.getBlockState(blockPos.down());
         NetherForestVegetationFeatureConfig netherForestVegetationFeatureConfig = context.getConfig();
         Random random = context.getRandom();
+
         if (!blockState.isOf(Blocks.BLACKSTONE)) {
             return false;
         }
+
         int i = blockPos.getY();
         if (i < structureWorldAccess.getBottomY() + 1 || i + 1 >= structureWorldAccess.getTopY()) {
             return false;
         }
+
         int j = 0;
-        for (int k = 0; k < netherForestVegetationFeatureConfig.spreadWidth * netherForestVegetationFeatureConfig.spreadWidth; ++k) {
-            BlockPos blockPos2 = blockPos.add(random.nextInt(netherForestVegetationFeatureConfig.spreadWidth) - random.nextInt(netherForestVegetationFeatureConfig.spreadWidth), random.nextInt(netherForestVegetationFeatureConfig.spreadHeight) - random.nextInt(netherForestVegetationFeatureConfig.spreadHeight), random.nextInt(netherForestVegetationFeatureConfig.spreadWidth) - random.nextInt(netherForestVegetationFeatureConfig.spreadWidth));
+        int spreadWidth = netherForestVegetationFeatureConfig.spreadWidth;
+        int spreadHeight = netherForestVegetationFeatureConfig.spreadHeight;
+
+        for (int k = 0; k < spreadWidth * spreadWidth; ++k) {
+            BlockPos blockPos2 = blockPos.add(
+                    random.nextInt(spreadWidth) - random.nextInt(spreadWidth),
+                    random.nextInt(spreadHeight) - random.nextInt(spreadHeight),
+                    random.nextInt(spreadWidth) - random.nextInt(spreadWidth)
+            );
+
+            // ✅ NEW: skip positions in neighboring chunks (worldgen-safe)
+            if ((blockPos2.getX() >> 4) != originChunkX || (blockPos2.getZ() >> 4) != originChunkZ) {
+                continue;
+            }
+
             BlockState blockState2 = netherForestVegetationFeatureConfig.stateProvider.get(random, blockPos2);
-            if (!structureWorldAccess.isAir(blockPos2) || blockPos2.getY() <= structureWorldAccess.getBottomY() || !blockState2.canPlaceAt(structureWorldAccess, blockPos2)) continue;
+            if (!structureWorldAccess.isAir(blockPos2)
+                    || blockPos2.getY() <= structureWorldAccess.getBottomY()
+                    || !blockState2.canPlaceAt(structureWorldAccess, blockPos2)) {
+                continue;
+            }
+
             structureWorldAccess.setBlockState(blockPos2, blockState2, Block.NOTIFY_LISTENERS);
             ++j;
         }
+
         return j > 0;
     }
+
 }
