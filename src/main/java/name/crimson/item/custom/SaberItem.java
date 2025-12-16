@@ -59,7 +59,7 @@ public class SaberItem extends SwordItem {
                 && !attacker.isTouchingWater()
                 && !attacker.hasStatusEffect(StatusEffects.BLINDNESS)
                 && !attacker.hasVehicle()
-                && target instanceof LivingEntity;
+                && target != null;
         if (attacker.getWorld() instanceof ServerWorld && !isCrit) {
             ((ServerWorld) attacker.getWorld()).spawnParticles(this.sweep, attacker.getX() + d, attacker.getBodyY(0.5), attacker.getZ() + e, 0, d, 0.0, e, 0.0);
         } else {
@@ -68,6 +68,7 @@ public class SaberItem extends SwordItem {
             }
 
         }
+        assert target != null;
         target.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 40, 0));
         target.addStatusEffect(new StatusEffectInstance(StatusEffects.MINING_FATIGUE, 40, 0));
         target.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 40, 0));

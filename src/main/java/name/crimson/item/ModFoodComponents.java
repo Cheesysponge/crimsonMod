@@ -15,6 +15,10 @@ public class ModFoodComponents {
             .statusEffect(new StatusEffectInstance(StatusEffects.GLOWING, 20, 0),1f).
             build();
 
-
+    public static final FoodComponent BIG_BLACKSTONE_FLOWER = new FoodComponent.Builder().nutrition(1).saturationModifier(0.05f)
+            .statusEffect(new StatusEffectInstance(StatusEffects.INSTANT_DAMAGE, 1, 1), 1f)
+            .statusEffect(new StatusEffectInstance(StatusEffects.INSTANT_HEALTH, 1, 0),1f)
+            .statusEffect(new StatusEffectInstance(StatusEffects.GLOWING, 800, 0),1f).
+            build();
 
 }

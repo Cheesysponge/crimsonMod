@@ -1,8 +1,10 @@
 package name.crimson.block;
 import name.crimson.Crimson;
 import name.crimson.block.custom.BlackstoneSpike;
+import name.crimson.block.custom.LargeFlower;
 import name.crimson.block.custom.StrangeFlower;
 import name.crimson.item.ModFoodComponents;
+import net.fabricmc.fabric.api.entity.event.v1.EntityElytraEvents;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
 import net.minecraft.entity.effect.StatusEffects;
@@ -26,9 +28,11 @@ public class ModBlocks {
     public static final Block BLACKSTONE_FLOWER = registerBlock("blackstone_flower", new StrangeFlower(StatusEffects.FIRE_RESISTANCE,1000,
                     FabricBlockSettings.copy(Blocks.DANDELION).luminance((state) -> 6).dynamicBounds().strength(1f)),
             new Item.Settings().food(ModFoodComponents.BLACKSTONE_FLOWER));
-
+    public static final Block BIG_BLACKSTONE_FLOWER = registerBlock("big_blackstone_flower", new LargeFlower(StatusEffects.FIRE_RESISTANCE,10000000,
+                    FabricBlockSettings.copy(Blocks.ROSE_BUSH).luminance((state) -> 6).dynamicBounds().strength(1f)),
+            new Item.Settings().food(ModFoodComponents.BIG_BLACKSTONE_FLOWER));
     public static final Block BLACKSTONE_SPIKE = registerBlock("blackstone_spike", new BlackstoneSpike(FabricBlockSettings.copy(Blocks.POINTED_DRIPSTONE)));
-    public static final Block[] items = new Block[] {CRIMSON_CHOMPER_EYE,NETHER_SAPPHIRE_ORE,SAPPHIRE_BLOCK,BLACKSTONE_FLOWER, BLACKSTONE_SPIKE, NETHER_RUBY_ORE};
+    public static final Block[] items = new Block[] {CRIMSON_CHOMPER_EYE,NETHER_SAPPHIRE_ORE,SAPPHIRE_BLOCK,BLACKSTONE_FLOWER, BLACKSTONE_SPIKE, NETHER_RUBY_ORE,BIG_BLACKSTONE_FLOWER};
 
     private static Block registerBlock(String name, Block block){
         registerBlockItem(name, block);

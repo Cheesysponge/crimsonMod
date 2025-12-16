@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "crimson:block/big_blackstone_flower",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "crimson:block/big_blackstone_flower"
+    },
+    "facing=south": {
+      "model": "crimson:block/big_blackstone_flower",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "crimson:block/big_blackstone_flower",
+      "y": 270
+    }
+  }
+}
