@@ -3,7 +3,9 @@ import name.crimson.Crimson;
 import name.crimson.block.custom.BlackstoneSpike;
 import name.crimson.block.custom.LargeFlower;
 import name.crimson.block.custom.StrangeFlower;
+import name.crimson.block.custom.item.ToolBlockItem;
 import name.crimson.item.ModFoodComponents;
+import name.crimson.item.ModToolMaterials;
 import net.fabricmc.fabric.api.entity.event.v1.EntityElytraEvents;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
@@ -15,6 +17,8 @@ import net.minecraft.util.math.intprovider.UniformIntProvider;
 
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+
+import javax.tools.Tool;
 
 public class ModBlocks {
     public static final Block CRIMSON_CHOMPER_EYE = registerBlock("crimson_chomper_eye",
@@ -28,9 +32,9 @@ public class ModBlocks {
     public static final Block BLACKSTONE_FLOWER = registerBlock("blackstone_flower", new StrangeFlower(StatusEffects.FIRE_RESISTANCE,1000,
                     FabricBlockSettings.copy(Blocks.DANDELION).luminance((state) -> 6).dynamicBounds().strength(1f)),
             new Item.Settings().food(ModFoodComponents.BLACKSTONE_FLOWER));
-    public static final Block BIG_BLACKSTONE_FLOWER = registerBlock("big_blackstone_flower", new LargeFlower(StatusEffects.FIRE_RESISTANCE,10000000,
+    public static final Block BIG_BLACKSTONE_FLOWER = registerToolBlock("big_blackstone_flower", new LargeFlower(StatusEffects.FIRE_RESISTANCE,10000000,
                     FabricBlockSettings.copy(Blocks.ROSE_BUSH).luminance((state) -> 6).dynamicBounds().strength(1f)),
-            new Item.Settings().food(ModFoodComponents.BIG_BLACKSTONE_FLOWER));
+            new Item.Settings().food(ModFoodComponents.BIG_BLACKSTONE_FLOWER), ModToolMaterials.BLACKSTONE,6,-3.2f);
     public static final Block BLACKSTONE_SPIKE = registerBlock("blackstone_spike", new BlackstoneSpike(FabricBlockSettings.copy(Blocks.POINTED_DRIPSTONE)));
     public static final Block[] items = new Block[] {CRIMSON_CHOMPER_EYE,NETHER_SAPPHIRE_ORE,SAPPHIRE_BLOCK,BLACKSTONE_FLOWER, BLACKSTONE_SPIKE, NETHER_RUBY_ORE,BIG_BLACKSTONE_FLOWER};
 
@@ -38,6 +42,11 @@ public class ModBlocks {
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, Identifier.of(Crimson.MODID, name), block);
     }
+    private static Block registerToolBlock(String name, Block block, Item.Settings itemSettings, ToolMaterial material, int damage, float attackSpeed){
+        registerToolBlockItem(name, block, itemSettings, material, damage, attackSpeed);
+        return Registry.register(Registries.BLOCK, Identifier.of(Crimson.MODID, name), block);
+    }
+
     private static Block registerBlock(String name, Block block, Item.Settings itemSettings){
         registerBlockItem(name, block, itemSettings);
         return Registry.register(Registries.BLOCK, Identifier.of(Crimson.MODID, name), block);
@@ -64,7 +73,12 @@ public class ModBlocks {
                 new BlockItem(block, itemSettings));
         return item;
     }
-
+    private static Item registerToolBlockItem(String name, Block block, Item.Settings itemSettings, ToolMaterial material, int damage, float attackSpeed) {
+        Item item = null;
+        item = Registry.register(Registries.ITEM, Identifier.of(Crimson.MODID, name),
+                new ToolBlockItem(block, itemSettings.attributeModifiers(ToolBlockItem.createAttributeModifiers(material,damage, attackSpeed)),material));
+        return item;
+    }
     public static void registerModBlocks() {
         Crimson.LOGGER.info("Registering Blocks for " + Crimson.MODID);
     }

@@ -3,6 +3,7 @@ package name.crimson.item;
 import name.crimson.Crimson;
 import name.crimson.entity.ModEntities;
 import name.crimson.item.custom.SaberItem;
+import name.crimson.item.custom.WingsItem;
 import name.crimson.particle.ModParticles;
 import net.minecraft.item.*;
 import net.minecraft.particle.ParticleEffect;
@@ -63,14 +64,16 @@ public class ModItems {
 //
     public static final Item NETHER_WART_BREAD = registerItem("nether_wart_bread",new Item(new Item.Settings().maxCount(16).fireproof().rarity(Rarity.COMMON).food(ModFoodComponents.WART_BREAD)));
 
+    public static final Item CRIMSON_WINGS = registerItem("crimson_wings", new WingsItem(ModArmorMaterials.RUBY, ArmorItem.Type.CHESTPLATE,new Item.Settings().rarity(Rarity.UNCOMMON).maxCount(1)));
+
     public static final Item[] armor = {SAPPHIRE_HELMET,SAPPHIRE_CHESTPLATE,SAPPHIRE_LEGGINGS,SAPPHIRE_BOOTS,
             RUBY_HELMET,RUBY_CHESTPLATE,RUBY_LEGGINGS,RUBY_BOOTS};
 
     public static final Item[] tools = {SAPPHIRE_SWORD,SAPPHIRE_PICKAXE,SAPPHIRE_AXE,SAPPHIRE_SHOVEL,SAPPHIRE_HOE,SAPPHIRE_SABER,
             RUBY_SWORD,RUBY_PICKAXE,RUBY_AXE,RUBY_SHOVEL,RUBY_HOE,RUBY_SABER};
 
-    public static final Item[] items = {CHOMPER_SPAWN_EGG,CRIMSON_EYE, TIGER_SPAWN_EGG, NETHER_WART_BREAD, SAPPHIRE,RUBY};
-    public static final Item[] items_for_textures = {CRIMSON_EYE, NETHER_WART_BREAD, SAPPHIRE, RUBY};
+    public static final Item[] items = {CHOMPER_SPAWN_EGG,CRIMSON_EYE, TIGER_SPAWN_EGG, NETHER_WART_BREAD, SAPPHIRE,RUBY,CRIMSON_WINGS};
+    public static final Item[] items_for_textures = {CRIMSON_EYE, NETHER_WART_BREAD, SAPPHIRE, RUBY,CRIMSON_WINGS};
 
 
     private static Item registerItem(String name, Item item) {

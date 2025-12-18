@@ -1,12 +1,12 @@
 {
-  "feature": "crimson:blackstone_flower",
+  "feature": "crimson:big_blackstone_flower",
   "placement": [
     {
       "type": "minecraft:count",
       "count": {
         "type": "minecraft:uniform",
-        "max_inclusive": 8,
-        "min_inclusive": 4
+        "max_inclusive": 3,
+        "min_inclusive": 1
       }
     },
     {
@@ -17,7 +17,7 @@
       "height": {
         "type": "minecraft:uniform",
         "max_inclusive": {
-          "above_bottom": 120
+          "above_bottom": 110
         },
         "min_inclusive": {
           "above_bottom": 76

@@ -1,6 +1,7 @@
 package name.crimson.item;
 
 import com.google.common.base.Suppliers;
+import name.crimson.block.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.item.ToolMaterial;
@@ -13,8 +14,9 @@ import java.util.function.Supplier;
 
 public enum ModToolMaterials implements ToolMaterial {
     SAPPHIRE(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 908, 9.5f, 4f, 30, () -> Ingredient.ofItems(ModItems.SAPPHIRE)),
-    RUBY(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 1701, 10f, 4.5f, 30, () -> Ingredient.ofItems(ModItems.RUBY));
+    RUBY(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 1701, 10f, 4.5f, 30, () -> Ingredient.ofItems(ModItems.RUBY)),
 
+    BLACKSTONE(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 30, 10f, 5f, 30, () -> Ingredient.ofItems(ModBlocks.BLACKSTONE_FLOWER));
 
     private final TagKey<Block> inverseTag;
     private final int itemDurability;

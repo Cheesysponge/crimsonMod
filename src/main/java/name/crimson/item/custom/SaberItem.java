@@ -73,7 +73,7 @@ public class SaberItem extends SwordItem {
         target.addStatusEffect(new StatusEffectInstance(StatusEffects.MINING_FATIGUE, 40, 0));
         target.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 40, 0));
         if(this.material == ModToolMaterials.RUBY){
-            target.setOnFireFor(2);
+            target.setOnFireFor(200);
         }
         if(this.material == ModToolMaterials.SAPPHIRE){
             target.setFrozenTicks(target.getFrozenTicks()+50);

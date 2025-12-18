@@ -43,6 +43,9 @@ public class ModConfiguredFeatures {
 
     public static final RegistryKey<ConfiguredFeature<?,?>> BLACKSTONE_FLOWER_KEY = registerKey("blackstone_flower");
 
+    public static final RegistryKey<ConfiguredFeature<?,?>> BIG_BLACKSTONE_FLOWER_KEY = registerKey("big_blackstone_flower");
+
+
     public static final RegistryKey<ConfiguredFeature<?,?>> BLACKSTONE_SPIKE_KEY = registerKey("blackstone_spike");
 
     public static final RegistryKey<ConfiguredFeature<?,?>> LARGE_BLACKSTONE_SPIKE_KEY = registerKey("large_blackstone_spike");
@@ -73,7 +76,10 @@ public class ModConfiguredFeatures {
 
 
         register(context, BLACKSTONE_FLOWER_KEY, ModFeature.BLACKSTONE_VEGETATION,
-                new NetherForestVegetationFeatureConfig(BlockStateProvider.of(ModBlocks.BLACKSTONE_FLOWER), 1, 1));
+                new NetherForestVegetationFeatureConfig(BlockStateProvider.of(ModBlocks.BLACKSTONE_FLOWER), 2, 2));
+
+        register(context, BIG_BLACKSTONE_FLOWER_KEY, ModFeature.BLACKSTONE_VEGETATION,
+                new NetherForestVegetationFeatureConfig(BlockStateProvider.of(ModBlocks.BIG_BLACKSTONE_FLOWER), 1, 1));
 
         register(context, BLACKSTONE_SPIKE_KEY, Feature.SIMPLE_RANDOM_SELECTOR,
                 new SimpleRandomFeatureConfig(RegistryEntryList.of(PlacedFeatures.createEntry(ModFeature.BLACKSTONE_SPIKES,

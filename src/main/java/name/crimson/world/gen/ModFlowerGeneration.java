@@ -16,5 +16,7 @@ public class ModFlowerGeneration {
 
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(ModBiomes.CRIMSON),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.BLACKSTONE_FLOWER_PLACED_KEY);
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(ModBiomes.CRIMSON),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.BIG_BLACKSTONE_FLOWER_PLACED_KEY);
     }
 }

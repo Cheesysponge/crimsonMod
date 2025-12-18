@@ -31,5 +31,7 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.NETHER_RUBY_ORE, dropsWithSilkTouch(ModBlocks.NETHER_RUBY_ORE, this.applyExplosionDecay(ModBlocks.NETHER_RUBY_ORE, ItemEntry.builder(ModItems.RUBY).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1F, 2.0F))).apply(ApplyBonusLootFunction.oreDrops(impl.getOrThrow(Enchantments.FORTUNE))))));
 
         addDrop(ModBlocks.BLACKSTONE_FLOWER, dropsWithSilkTouch(ModBlocks.BLACKSTONE_FLOWER, this.applyExplosionDecay(ModBlocks.BLACKSTONE_FLOWER, ItemEntry.builder(Blocks.BLACKSTONE).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1F, 1F))).apply(ApplyBonusLootFunction.oreDrops(impl.getOrThrow(Enchantments.FORTUNE))))));
+        addDrop(ModBlocks.BIG_BLACKSTONE_FLOWER, dropsWithSilkTouch(ModBlocks.BIG_BLACKSTONE_FLOWER, this.applyExplosionDecay(ModBlocks.BIG_BLACKSTONE_FLOWER, ItemEntry.builder(Blocks.BLACKSTONE).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2F, 3F))).apply(ApplyBonusLootFunction.oreDrops(impl.getOrThrow(Enchantments.FORTUNE))))));
+
     }
  }

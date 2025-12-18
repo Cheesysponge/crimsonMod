@@ -27,6 +27,9 @@ public class ModPlacedFeatures {
 
     public static final RegistryKey<PlacedFeature> BLACKSTONE_FLOWER_PLACED_KEY = registerKey("blackstone_flower_placed");
 
+    public static final RegistryKey<PlacedFeature> BIG_BLACKSTONE_FLOWER_PLACED_KEY = registerKey("big_blackstone_flower_placed");
+
+
     public static final RegistryKey<PlacedFeature> BLACKSTONE_SPIKE_PLACED_KEY = registerKey("blackstone_spike_placed");
     public static final RegistryKey<PlacedFeature> LARGE_BLACKSTONE_SPIKE_PLACED_KEY = registerKey("large_blackstone_spike_placed");
     public static final RegistryKey<PlacedFeature> BLACKSTONE_SPIKE_CLUSTER_PLACED_KEY = registerKey("blackstone_spike_cluster_placed");
@@ -45,14 +48,11 @@ public class ModPlacedFeatures {
         register(context, BLACKSTONE_FLOWER_PLACED_KEY,
                 configured.getOrThrow(ModConfiguredFeatures.BLACKSTONE_FLOWER_KEY),
 
-                // how many patches per chunk
-                CountPlacementModifier.of(UniformIntProvider.create(2, 6)),
+                CountPlacementModifier.of(UniformIntProvider.create(4, 8)),
                 SquarePlacementModifier.of(),
 
-                // limit to the band where your blackstone shelf is
                 HeightRangePlacementModifier.uniform(YOffset.aboveBottom(76), YOffset.aboveBottom(120)),
 
-                // 🔑 scan down until we hit blackstone, but only while moving through air
                 EnvironmentScanPlacementModifier.of(
                         Direction.DOWN,
                         net.minecraft.world.gen.blockpredicate.BlockPredicate.matchingBlocks(Blocks.BLACKSTONE),
@@ -60,16 +60,30 @@ public class ModPlacedFeatures {
                         32
                 ),
 
-                // move to the air block above the found blackstone
                 RandomOffsetPlacementModifier.of(net.minecraft.util.math.intprovider.ConstantIntProvider.create(0),
                         net.minecraft.util.math.intprovider.ConstantIntProvider.create(1))
 
-
-
-                // IMPORTANT: no BiomePlacementModifier (your region is not a biome)
         );
 
+        register(context, BIG_BLACKSTONE_FLOWER_PLACED_KEY,
+                configured.getOrThrow(ModConfiguredFeatures.BIG_BLACKSTONE_FLOWER_KEY),
 
+                CountPlacementModifier.of(UniformIntProvider.create(1, 3)),
+                SquarePlacementModifier.of(),
+
+                HeightRangePlacementModifier.uniform(YOffset.aboveBottom(76), YOffset.aboveBottom(110)),
+
+                EnvironmentScanPlacementModifier.of(
+                        Direction.DOWN,
+                        net.minecraft.world.gen.blockpredicate.BlockPredicate.matchingBlocks(Blocks.BLACKSTONE),
+                        net.minecraft.world.gen.blockpredicate.BlockPredicate.IS_AIR,
+                        32
+                ),
+
+                RandomOffsetPlacementModifier.of(net.minecraft.util.math.intprovider.ConstantIntProvider.create(0),
+                        net.minecraft.util.math.intprovider.ConstantIntProvider.create(1))
+
+        );
         register(context, BLACKSTONE_SPIKE_PLACED_KEY, configured.getOrThrow(ModConfiguredFeatures.BLACKSTONE_SPIKE_KEY),
                 CountPlacementModifier.of(UniformIntProvider.create(192, 256)), SquarePlacementModifier.of(), PlacedFeatures.BOTTOM_TO_TOP_RANGE,
                 CountPlacementModifier.of(UniformIntProvider.create(1, 5)), RandomOffsetPlacementModifier.of(ClampedNormalIntProvider.of(0.0F, 3.0F, -10, 10),
